@@ -1,0 +1,56 @@
+$link_blue: #28b
+$link_light_blue: #3ae
+$light_grey_border: 1px solid #eee
+
+#widget_box
+  font-family: Arial, Helvetica, sans-serif
+  width: 182px
+  height: auto
+  padding: 5px
+  border: $light_grey_border
+  border-bottom: 0
+
+#widget_title
+  font-size: 15px
+  margin-bottom: 5px
+  padding-bottom: 5px
+  color: #444
+  display: block
+  font-weight: bold
+  border-bottom: $light_grey_border
+
+#widget_text
+  font-size: 23px
+  color: $link_blue
+  font-weight: bold
+  margin: 5px 0
+
+#widget_bottom
+  background: #445
+  padding: 7px
+  display: block
+  border: $light_grey_border
+  width: 178px
+  display: table
+  a
+    text-decoration: none
+    font-weight: bold
+    font-size: 14px
+    color: #fff
+    display: table-cell
+    &:first-child
+      background: #445 url(/images/bic_index/add_betterif.png) no-repeat 0 0
+      line-height: 20px
+      padding-left: 20px
+    &:hover
+      color: $link_light_blue
+
+a#widget_results
+  &:hover
+    color: $link_light_blue
+  text-decoration: none
+  text-align: right
+  font-weight: normal
+  font-size: 11px
+  color: #fff
+  display: table-cell

@@ -1,0 +1,77 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+#rich_brand_image
+  position: relative
+  .follow-inner
+    bottom: 10px
+    left: 214px
+    position: absolute
+  .logo
+    left: 10px
+    @media only screen and (max-width: 479px)
+      margin-top: 0 !important
+      top: ($spacing-inner / 2) !important
+      width: 20%
+      max-width: 20%
+    @media only screen and (min-width: 480px) and (max-width: 767px)
+      margin-top: 0 !important
+      top: ($spacing-inner / 2) !important
+      width: 30%
+      max-width: 30%
+    position: absolute
+  .rich-brand-image
+    margin-top: ($spacing-inner / 2)
+  .stat-boxes-wrapper
+    background-color: #fff
+    bottom: 0
+    left: 0
+    padding: $spacing-inner $spacing-outer
+    position: absolute
+    @include prefixer(border-top-right-radius, 1px, spec)
+  .stat-boxes
+    .stat-box
+      border-right: 1px solid $color-gray-lighter
+      color: $color-blue
+      float: left
+      font-size: 12px
+      padding: 2px ($spacing-inner / 2)
+      text-transform: lowercase
+      .blue-bold-numerals
+        font-size: 120%
+    .stat-box:first-child
+      padding-left: 0
+    .stat-box:last-child
+      border-right: 0
+    .stat-title
+      color: $color-blue-medium
+      font:
+        size: 100%
+        weight: normal
+      line-height: 90%
+
+#suggested_topics
+  .suggested-topics-grid
+    .add-wibbi
+      width: 91px
+      padding: ($spacing-inner / 2) 0 0 ($spacing-inner / 2)
+      margin: 0
+      height: 40px 
+      overflow: hidden
+      position: relative
+      display: inline-block
+      float: left
+      border-left: 1px solid $color-blue-light
+      font:
+        size: 70%
+        weight: bold
+      color: $color-blue-dark
+      display: block
+      &.first-row
+        border-bottom: 1px solid $color-blue-light
+      &:first-child, &:nth-child(4n)
+        border-left: none
+        width: 90px
+      &:hover
+        background: $color-blue-light
+        text-decoration: underline

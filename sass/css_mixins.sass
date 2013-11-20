@@ -1,0 +1,1105 @@
+@mixin mobile
+  /* Mobile
+  @media only screen and (max-width: 767px)
+    @content
+@mixin non-mobile
+  /* Non-mobile
+  @media only screen and (min-width: 768px)
+    @content
+@mixin mobile-portrait
+  /* Mobile portrait
+  @media only screen and (max-width: 479px)
+    @content
+@mixin mobile-landscape
+  /* Mobile landscape
+  @media only screen and (min-width: 480px) and (max-width: 767px)
+    @content
+@mixin tablet
+  /* Tablet
+  @media only screen and (min-width: 768px) and (max-width: 959px)
+    @content
+@mixin no-desktop
+  /* No desktop
+  @media only screen and (max-width: 959px)
+    @content
+@mixin only-desktop
+  /* Desktop
+  @media only screen and (min-width: 960px)
+    @content
+
+// These are also classes in globals.sass.
+@mixin btn-gradient-blue
+  @include border-radius(2px)
+  @include linear-gradient(#65b3d7 0%, #3097c8 4%, #2371b3 100%, $fallback: #2371b3)
+  border: 1px solid #283b6b
+  color: #fff
+  display: block
+  font:
+    size: 0.85em
+    weight: 600
+  height: 25px
+  line-height: 23px
+  padding: 0
+  text:
+    align: center
+    decoration: none
+    shadow: none
+  &:hover
+    @include linear-gradient(#65b3d7 0%, #2371b3 4%, #3097c8 100%, $fallback: #3097c8)
+    color: #fff
+  &:active
+    @include box-shadow(0, 0, 30px, black, 0.50, false, true)
+@mixin link-no-styling
+  color: inherit
+  font: inherit
+  text-decoration: inherit
+@mixin hover-underline
+  &:hover
+    text-decoration: underline
+@mixin link-no-styling-hover-underline
+  @include link-no-styling
+  @include hover-underline
+
+@mixin filter-selected
+  @include border-top-radius(3px)
+  background-color: #fff
+  border-top: 5px solid $color-blue
+  text-decoration: none
+  a
+    color: $color-blue-medium
+    .dropdown-icon
+      background-image: url(/images/two_col/down_triangle_blue.png)
+
+// sets up prefixes for browser specific properties
+@mixin prefixer ($property, $value, $prefixes) 
+  @each $prefix in $prefixes 
+    @if $prefix == webkit 
+      -webkit-#{$property}: $value
+    @else if $prefix == moz 
+      -moz-#{$property}: $value
+    @else if $prefix == ms 
+      -ms-#{$property}: $value
+    @else if $prefix == o 
+      -o-#{$property}: $value
+    @else if $prefix == spec 
+      #{$property}: $value
+    @else 
+      @warn "Unrecognized prefix: #{$prefix}"
+// mixins for rounded corners (specify corners)
+@mixin border-top-radius($radii) 
+  @include prefixer(border-top-left-radius, $radii, spec)
+  @include prefixer(border-top-right-radius, $radii, spec)
+@mixin border-bottom-radius($radii) 
+  @include prefixer(border-bottom-left-radius, $radii, spec)
+  @include prefixer(border-bottom-right-radius, $radii, spec)
+@mixin border-left-radius($radii) 
+  @include prefixer(border-top-left-radius, $radii, spec)
+  @include prefixer(border-bottom-left-radius, $radii, spec)
+@mixin border-right-radius($radii) 
+  @include prefixer(border-top-right-radius, $radii, spec)
+  @include prefixer(border-bottom-right-radius, $radii, spec)
+// mixin for rounded corners (all corners)
+@mixin border-radius($radii)
+  @include border-top-radius($radii) 
+  @include border-bottom-radius($radii) 
+  
+@function compact($list) 
+  $new-list: ()
+  @each $element in $list 
+    @if $element 
+      $new-list: append($new-list, $element, comma)
+  @return $new-list
+// mixin for gradients
+@mixin linear-gradient($pos, $G1, $G2: false, $G3: false, $G4: false, $G5: false, $G6: false, $G7: false, $G8: false, $G9: false, $G10: false, $deprecated-pos1: left top, $deprecated-pos2: left bottom, $image: false, $image-offset: 0px 0px, $fallback: false)           
+  $pos-type: type-of(nth($pos, 1))
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  
+    $G10: $G9 
+    $G9: $G8
+    $G8: $G7 
+    $G7: $G6 
+    $G6: $G5
+    $G5: $G4 
+    $G4: $G3
+    $G3: $G2
+    $G2: $G1
+    $G1: $pos
+    $pos: top 
+  $full: compact(($G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10))
+  $fallback-color: nth($G1, 1)
+  @if (type-of($fallback) == color) or ($fallback == "transparent") 
+    $fallback-color: $fallback
+  background-color: $fallback-color
+  @if ($image != false)
+    background: url($image) $image-offset
+    background: url($image) $image-offset, deprecated-webkit-gradient(linear, $deprecated-pos1, $deprecated-pos2, $full)
+    background: url($image) $image-offset, -webkit-linear-gradient($pos, $full)
+    background: url($image) $image-offset,    -moz-linear-gradient($pos, $full)
+    background: url($image) $image-offset,     -ms-linear-gradient($pos, $full)
+    background: url($image) $image-offset,      -o-linear-gradient($pos, $full)
+    background: url($image) $image-offset, unquote("linear-gradient(#{$pos}, #{$full})")
+  @else
+    background: deprecated-webkit-gradient(linear, $deprecated-pos1, $deprecated-pos2, $full)
+    background:  -webkit-linear-gradient($pos, $full)
+    background:     -moz-linear-gradient($pos, $full)
+    background:      -ms-linear-gradient($pos, $full)
+    background:       -o-linear-gradient($pos, $full)
+    background: unquote("linear-gradient(#{$pos}, #{$full})")
+
+@mixin background-opacity($color, $opacity: 0.3) 
+  // The Fallback 
+  background: $color 
+  background: rgba($color, $opacity)
+
+@mixin opacity($opacity: 0.9)
+  // Adapted from
+  //   http://css-tricks.com/css-transparency-settings-for-all-broswers/
+  // Required for IE 5, 6, 7
+  // ...or something to trigger hasLayout, like zoom: 1;
+  zoom: 1
+  // Theoretically for IE 8 & 9 (more valid)
+  // ...but not required as filter works too
+  // should come BEFORE filter
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")"
+  // This works in IE 8 & 9 too
+  // ... but also 5, 6, 7
+  filter: alpha(opacity=($opacity*100))
+  // Older than Firefox 0.9
+  -moz-opacity: $opacity
+  // Safari 1.x (pre WebKit!)
+  -khtml-opacity: $opacity
+  opacity: $opacity
+
+// TODO Add prefixer
+@mixin box-shadow($horiz-offset, $vert-offset, $spread, $color, $opacity: 0.3, $add-fallback: true, $inset: false)
+  @if $add-fallback
+    box-shadow: $horiz-offset $vert-offset $spread $color
+  @if $inset
+    box-shadow: inset $horiz-offset $vert-offset $spread rgba($color, $opacity)
+  @else
+    box-shadow: $horiz-offset $vert-offset $spread rgba($color, $opacity)
+
+@mixin next-prev-link
+  color: $color-gray-darker
+  display: block
+  float: right
+  font-size: $font-size-smaller
+  line-height: 25px
+  padding: 0 $spacing-inner
+  text-decoration: none
+  @include hover-underline
+
+@mixin mobile-portrait-popup
+  height: 300px
+  left: 10px !important
+  overflow-y: scroll
+  position: fixed
+  top: 45px !important
+  width: 240px
+@mixin mobile-landscape-popup
+  height: 150px
+  left: 30px !important
+  overflow-y: scroll
+  position: fixed
+  top: 45px !important
+  width: 300px
+
+@mixin input-field
+  background: #fff
+  border: 1px solid $color-gray-lighter
+  @include border-radius(2px)
+  color: $color-gray
+  margin-bottom: $spacing-inner
+  outline: none
+  padding: 6px 4px
+  &:focus
+    @include box-shadow(0, 0, 3px, rgba(0, 0, 0, .2))
+    border: 1px solid $color-gray-light
+    color: $color-gray-dark
+
+@mixin hide-text
+  display: block
+  text-indent: -9999em
+  overflow: hidden
+
+// fix for collapsing margins
+@mixin collapsing-margin-fix
+  overflow: hidden
+
+@mixin clear-list-styles
+  ol, ul, li
+    margin: 0
+    padding: 0
+    text-indent: 0
+  ul, ol
+    li
+      list-style: none
+
+@mixin tinyc-image-dimensions
+  height: 40px
+  width: 40px
+
+@mixin imagegridc-image-dimensions
+  height: 25px
+  width: 25px
+
+@mixin apply-placeholder-styles
+  ::-webkit-input-placeholder 
+    @content
+  \:-moz-placeholder 
+    @content
+  ::-moz-placeholder 
+    @content
+  \:-ms-input-placeholder 
+    @content
+
+@mixin ul-dropdown
+  @include background-opacity(#fff, 0.95)
+  @include border-bottom-radius(2px)
+  @include box-shadow(0, 2px, 15px, $color-gray-dark, 0.1, false)
+  background-color: #fff
+  border: 1px solid $color-blue-light
+  border-left: 0
+  border-top: 0
+  display: none
+  font-size: $font-size-small-plus
+  margin: 7px 0 0 0
+  min-width: 110%
+  position: absolute
+  z-index: 9999
+  li
+    background-color: #fff
+    border: none
+    float: none
+    margin: 0
+    padding: 0
+    a
+      @extend .link-no-styling
+      color: $color-blue-medium
+      display: block
+      line-height: 100%
+      padding: $spacing-inner
+      white-space: nowrap
+      &:hover,
+      &.filter-applied
+        background-color: $color-blue-medium
+        color: #fff
+
+@mixin create-betterif
+  @include border-radius(1px)
+  padding: $spacing-outer 0 0
+  .create-betterif-inner
+    @include collapsing-margin-fix
+    background-color: $color-slate-lightest
+    width: $item-width
+    @include mobile-portrait
+      width: $mobile-portrait-item-width
+    @include mobile-landscape
+      width: $mobile-landscape-item-width
+    @include tablet
+      width: $tablet-item-width
+    form.collapsed
+      cursor: pointer
+      div
+        cursor: pointer
+    .create-betterif-expand
+      display: none
+      margin-top: ($spacing-inner + 3px)
+      padding: 0 0 $spacing-inner 0
+      position: relative
+      #tag_prompt_controls_open
+        margin-right: 0
+        margin-top: 15px
+      .create-betterif-tags-wrapper
+        clear: both
+      .ui-tagging
+        .ui-tagging-highlight
+          @include mobile
+            margin-left: 0
+    .create-betterif-placeholder
+      background: #fff
+      border: 1px solid $color-gray-outline
+      color: $color-black-light
+      cursor: text
+      display: block
+      font:
+        size: 110%
+        weight: 300
+      margin: $spacing-inner
+      padding: $spacing-inner $spacing-inner 10px $spacing-inner
+      span
+        cursor: text
+      textarea
+        border: 0
+        color: $color-black-light
+        font:
+          size: $font-size-small
+          weight: 400
+        margin: 0
+        outline: none
+        padding: 0
+        resize: none
+        width: $item-width - ($spacing-inner * 4)
+        @include mobile-portrait
+          width: $mobile-portrait-item-width - ($spacing-inner * 4)
+        @include mobile-landscape
+          width: $mobile-landscape-item-width - ($spacing-inner * 4)
+      .expander
+        background: $color-blue url(/images/two_col/down_triangle.png) no-repeat 14px 15px
+        cursor: pointer
+        float: right
+        height: 38px
+        margin: -9px (-$spacing-inner) 0 0
+        width: 38px
+    .chars-left,
+    .chars-right
+      color: $color-black-light
+      float: left
+      font-size: $font-size-smallest-plus
+      margin: 0 $spacing-inner ($spacing-inner - 2px) $spacing-inner
+      text-align: left
+    .chars-right
+      float: right
+      font-size: 100%
+      .clear-tag-prompt,
+      .next,
+      .prev
+        @include next-prev-link
+        font-size: $font-size-smallest-plus
+      .clear-tag-prompt
+        border-left: 0
+        border-right: 1px solid $color-blue-light
+      .prev
+        border-left: 0
+    ul, li
+      list-style: none
+      margin: 0
+      padding-left: 0
+      text-indent: 0
+    .tags-title,
+    .users-title,
+    .image-title
+      color: $color-black-light
+      float: left
+      font-size: $font-size-small-plus
+      margin: 10px 0 0 $spacing-inner
+      width: 40px
+    .image-title,
+    .users-title
+      margin-top: $spacing-inner * 2
+    .image-title
+      width: 120px
+    .create-betterif-tags,
+    .create-betterif-users
+      float: left
+      margin: 0 0 0 7px
+      width: $tags-width
+      @include mobile-portrait
+        width: $mobile-portrait-tags-width
+      @include mobile-landscape
+        width: $mobile-landscape-tags-width
+      @include tablet
+        width: $tablet-tags-width
+      background: #fff
+      border: 1px solid $color-gray-outline
+      .token-input-list-facebook
+        width: $tags-width - 10
+        @include mobile-portrait
+          width: $mobile-portrait-tags-width - 10
+        @include mobile-landscape
+          width: $mobile-landscape-tags-width - 10
+        @include tablet
+          width: $tablet-tags-width - 10
+      .tag
+        float: left
+        margin: 0 5px 5px 0
+      .tag-input
+        border: none
+        clear: both
+        display: block
+        font-size: $font-size-smaller-plus
+        margin: 0
+        outline: none
+        padding: 0
+    .create-betterif-users,
+    .create-betterif-image
+      display: inline-block
+      margin-top: $spacing-inner
+    .create-betterif-share
+      margin: $spacing-inner+6px ($spacing-inner + 2px) $spacing-inner 0
+      height: 25px
+      .share-title
+        color: $color-black-light
+        float: left
+        font-size: $font-size-small-plus
+        margin: 4px 0 0 $spacing-inner
+      .share-btn
+        background: transparent url(/images/two_col/wibbi_share_btns.jpg) no-repeat 0 0
+        cursor: pointer
+        display: block
+        float: left
+        height: 25px
+        margin: 0 0 0 5px
+        overflow: hidden
+        width: 35px
+        &:active
+          @include box-shadow(0, 0, 20px, black, 0.50, false, true)
+        &.share-fb
+          background-position: 0 0 
+          &:hover
+            background-position: 0 -25px
+          &:active, &.active
+            background-position: 0 -50px 
+        &.share-twit
+          background-position: 0 -75px 
+          &:hover
+            background-position: 0 -100px
+          &:active, &.active
+            background-position: 0 -125px 
+    .create-betterif-submit
+      cursor: pointer
+      float: right
+      height: 33px
+      line-height: 33px
+      padding: 0 $spacing-inner
+      margin: $spacing-inner $spacing-inner $spacing-inner $spacing-inner
+      width: 150px
+      @include mobile-portrait
+        width: 110px
+      text-align: center
+      font:
+        size: $font-size-smaller
+        weight: normal
+    .loader
+      float: right
+      margin-top: $spacing-inner
+    ul.token-input-list-facebook
+      width: $tags-width - 10
+      @include mobile-portrait
+        width: $mobile-portrait-tags-width
+      @include mobile-landscape
+        width: $mobile-landscape-tags-width
+
+@mixin feed
+  margin: 0
+  position: relative
+  width: $item-width
+  @include mobile-portrait
+    width: $mobile-portrait-item-width
+  @include mobile-landscape
+    width: $mobile-landscape-item-width
+  @include tablet
+    width: $tablet-item-width
+  .more-ideas-link
+    display: block
+    height: 28px  
+    line-height: 28px
+    margin: $spacing-outer 0 $spacing-outer 0
+    z-index: 999
+    &.inactive 
+      font-style: italic
+      &:after 
+        content: '...'
+  .feed-items
+    clear: both
+    margin: 0
+    padding: $spacing-outer 0 0 0
+    .item
+      border-top: 1px solid $color-gray-lighter
+      clear: both
+      padding: $spacing-outer 0
+      width: $item-width
+      @include mobile-portrait
+        width: $mobile-portrait-item-width
+      @include mobile-landscape
+        width: $mobile-landscape-item-width
+      @include tablet
+        width: $tablet-item-width
+      & > .item
+        padding: $spacing-outer 0
+      .tag-img,
+      .user-img
+        @include imagegridc-image-dimensions
+        float: left
+      .img-wrapper
+        float: left
+        margin-bottom: $spacing-inner
+        width: $item-width - $item-vote-width
+        @include mobile-portrait
+          width: $mobile-portrait-item-width - $item-vote-width
+        @include mobile-landscape
+          width: $mobile-landscape-item-width - $item-vote-width
+        @include tablet
+          width: $tablet-item-width - $item-vote-width
+        & > a
+          @include imagegridc-image-dimensions
+        .idea-img,
+        .qod-tag-img
+          @include imagegridc-image-dimensions
+          display: inline-block
+          float: left
+        .name-wrapper
+          color: $color-gray-medium
+          display: inline-block
+          float: left
+          font-size: $font-size-small
+          margin: 13px 0 0 $spacing-inner
+          width: $item-width - $spacing-inner - $item-vote-width - 25
+          @include mobile-portrait
+            width: $mobile-portrait-item-width - $spacing-inner - $item-vote-width - 25
+          @include mobile-landscape
+            width: $mobile-landscape-item-width - $spacing-inner - $item-vote-width - 25
+          @include tablet
+            width: $tablet-item-width - $spacing-inner - $item-vote-width - 25
+          a
+            @extend .link-no-styling-hover-underline
+            color: $color-black-light
+          .name
+            a
+              color: $color-black-light
+              font-weight: bold
+          .time-wrapper
+            display: inline
+            a
+              color: $color-gray-medium
+          @include mobile
+            margin-bottom: $spacing-inner
+      .banner-img
+        margin-bottom: ($spacing-inner * 2)
+        img
+          display: block
+          margin: 0 auto
+      .tinyc-img
+        @include tinyc-image-dimensions
+      .item-left
+        float: left
+        width: $item-width - $item-vote-width
+        @include mobile-portrait
+          width: $mobile-portrait-item-width - $item-vote-width
+        @include mobile-landscape
+          width: $mobile-landscape-item-width - $item-vote-width
+        @include tablet
+          width: $tablet-item-width - $item-vote-width
+      .item-box
+        .idea-body
+          display: block
+          margin: 0 0 ($spacing-inner * 2) 0
+          form
+            &.edit_idea
+              display: none
+              textarea
+                margin: 0
+                padding: 0
+                width: 428px
+              .idea-text-edit
+                display: inline-block
+                margin-top: $spacing-inner
+              .ui-tagging-wrapper
+                border: 1px solid $color-blue-lighter
+                padding: ($spacing-inner / 2)
+                width: 430px
+              @include mobile-portrait
+                width: $mobile-portrait-tags-width
+                .token-input-list-facebook
+                  width: $mobile-portrait-tags-width
+              @include mobile-landscape
+                width: $mobile-landscape-tags-width
+                .token-input-list-facebook
+                  width: $mobile-landscape-tags-width
+          .idea-body-text
+            line-height: 1.5em
+          .idea-text-edit
+            @extend .link-no-styling-hover-underline
+            color: $color-blue
+            font-size: $font-size-smaller
+          .idea-from-device
+            color: $color-gray-light
+            font-size: $font-size-smaller
+            margin-top: 2px
+        .qod-choices
+          & > div
+            margin-top: $spacing-inner
+            div
+              @extend .link-no-styling
+              @include border-radius(2px)
+              background-color: $color-blue
+              color: #fff
+              cursor: pointer
+              display: inline-block
+              font-weight: bold
+              margin: 0 0 0 $spacing-inner
+              @include mobile
+                margin-left: 0
+              overflow: hidden
+              padding: $spacing-inner
+              text-align: center
+              text-decoration: none
+              white-space: nowrap
+              width: (($item-width - $spacing-inner - ($spacing-inner * 4)) / 2) - 2 // Why an extra "- 2"?
+              @include mobile-portrait
+                width: $mobile-portrait-item-width - ($spacing-inner * 2)
+              @include mobile-landscape
+                width: ($mobile-landscape-item-width - ($spacing-inner / 2) - ($spacing-inner * 2)) / 2
+              &:hover
+                background-color: $color-blue-medium
+              &:first-child
+                margin-left: 0
+              &:last-child
+                @include mobile
+                  margin-top: $spacing-inner
+          table
+            width: 100%
+            tr
+              th
+                color: $color-blue-medium
+                text-transform: uppercase
+              th, td
+                &:first-child
+                  padding-right: $spacing-outer
+                  text-align: right
+                &:last-child
+                  text-align: left
+        .qod-top-response-wrapper
+          margin-top: $spacing-outer
+          .header
+            color: $color-gray
+            text-transform: uppercase
+            a
+              @extend .link-no-styling-hover-underline
+              color: $color-blue
+              margin-left: $spacing-inner
+          .item-box
+            margin-top: $spacing-inner
+            a
+              &.qod-top-response-idea-user-name,
+              &.qod-top-response-idea-created-ago
+                @extend .link-no-styling-hover-underline
+                font-size: $font-size-smaller-plus
+                white-space: nowrap
+              &.qod-top-response-idea-user-name
+                color: $color-blue-medium
+              &.qod-top-response-idea-created-ago
+                color: $color-gray
+        .idea-prefix
+          @include opacity(0.9)
+          color: $color-black-light
+          font-weight: bold
+      .item-right
+        float: right
+      .tag-box,
+      .user-box
+        margin: 0 0 0 (25px + $spacing-inner)
+        .follow-wrapper
+          float: right
+        .tag-box-left,
+        .user-box-left
+          float: left
+          .tag-name,
+          .user-name
+            a
+              @extend .link-no-styling-hover-underline
+              color: $color-blue
+          .user-stats
+            span
+              border-left: 1px solid $color-gray-lighter
+              color: $color-gray
+              font-size: $font-size-small
+              margin-left: 7px
+              padding-left: 10px
+              &:first-child
+                border-left: 0
+                margin-left: 0
+                padding-left: 0
+              @include mobile
+                border-left: 0
+                display: block
+                margin-left: 0
+                padding-left: 0
+          .uas-footer
+            color: $color-blue
+            font-size: $font-size-small
+            margin-top: ($spacing-inner/2)
+            @include mobile-portrait
+              width: 145px
+            @include mobile-landscape
+              width: 260px
+        .tag-box-left
+          margin-bottom: $spacing-inner
+          padding-bottom: $spacing-inner
+      .comments-wrapper
+        background: $color-gray-lightest url(/images/two_col/threaded_comments_top_triangle.gif) no-repeat 0 0
+        clear: both
+        display: block
+        margin: $spacing-inner 0 0 0
+        @include mobile
+          margin-left: 0
+        width: $comments-width
+        @include mobile-portrait
+          width: $mobile-portrait-comments-width - 0
+        @include mobile-landscape
+          width: $mobile-landscape-comments-width + ($spacing-inner * 2)
+        @include tablet
+          width: $tablet-comments-width
+        &.active
+          padding: 5px 0 0 0
+        .loader
+          padding: ($spacing-inner + 5px) 0 0 $spacing-inner
+        .threaded-comments
+          display: block
+          padding: $spacing-inner 0 0 0
+          font-size: $font-size-smaller
+          .threaded-comments-more
+            border-bottom: 1px solid #fff
+            padding: ($spacing-inner - 4px) $spacing-inner $spacing-inner $spacing-inner
+            a
+              @extend .link-no-styling-hover-underline
+              color: $color-blue
+          .more-comments-wrapper,
+          .threaded-comments-comment
+            padding: ($spacing-inner / 2) ($spacing-inner * 2) $spacing-inner ($spacing-inner * 2)
+            .threaded-comments-comment-inner
+              border-bottom: 1px solid $color-gray-outline
+              padding-bottom: $spacing-inner
+            &:first-child
+              padding-top: $spacing-inner
+          .more-comments-wrapper
+            a
+              @extend .link-no-styling
+              color: $color-blue
+              font-size: $font-size-big
+          .threaded-comments-comment
+            .comment-user-img
+              @include tinyc-image-dimensions
+              @include mobile
+                @include imagegridc-image-dimensions
+                margin-left: ($spacing-inner / 2)
+              float: left
+            .comment-body
+              @include apply-placeholder-styles
+                color: #000
+              color: $color-black-light
+              line-height: 1.3em
+              margin: 0 0 $spacing-inner (($spacing-outer * 2) + $spacing-inner)
+              @include mobile-portrait
+                margin-left: (($spacing-outer * 2) + $spacing-inner - 15px)
+              overflow-wrap: break-word
+              a
+                @extend .link-no-styling-hover-underline
+                color: $color-blue
+              .comment-user-name
+                color: $color-blue-medium
+                font-weight: bold
+            .comment-footer
+              color: $color-gray-light
+              font-size: $font-size-small-plus
+              margin: 0 0 0 (($spacing-outer * 2) + $spacing-inner)
+              @include mobile-portrait
+                margin-left: (($spacing-outer * 2) + $spacing-inner - 15px)
+              .comment-footer-elem
+                float: left
+                margin: 0 ($spacing-inner / 2) 0 0
+                &.comment-vote-cnt,
+                &.comment-vote-btn-wrapper
+                  color: $color-blue
+                  float: left
+                  .comment-vote-btn
+                    @extend .link-no-styling-hover-underline
+                  .comment-upvote-inactive,
+                  .comment-upvote-active
+                    background: transparent url(/images/two_col/up_blue_arrow.png) no-repeat 38px 0
+                    padding-right: 15px
+                    &:hover
+                      background: transparent url(/images/two_col/up_blue_arrow_solid.png) no-repeat 38px 0
+                    &.raphael-btn
+                      background-position-x: 93px
+                  .comment-upvote-active
+                    background: transparent url(/images/two_col/up_blue_arrow_solid.png) no-repeat 38px 0
+                  .loader
+                    height: 13px
+                    margin: 0
+                    padding: 0 
+                    width: 17px
+                &.comment-delete
+                  a:hover
+                    text-decoration: underline
+        .create-comment
+          display: block
+          padding: $spacing-inner ($spacing-inner * 2)
+          margin: 1px 0 0 0
+          .comment-user-img
+            @include tinyc-image-dimensions
+            @include mobile
+              @include imagegridc-image-dimensions
+              margin-right: $spacing-inner / 2
+            float: left
+            margin: 0 $spacing-inner 0 0
+          .create-comment-box
+            float: left
+            .comment-body
+              border: 1px solid $color-blue-light
+              font-size: $font-size-smaller
+              margin-bottom: 0
+              padding: 3px
+              width: $comments-width - ($spacing-outer * 4) - $spacing-inner
+              max-width: $comments-width - ($spacing-outer * 4) - $spacing-inner
+              @include mobile-portrait
+                width: $mobile-portrait-comments-width - ($spacing-outer * 2) - ($spacing-inner / 2) - 25px !important
+                max-width: $mobile-portrait-comments-width - ($spacing-outer * 2) - ($spacing-inner / 2) - 25px
+              @include mobile-landscape
+                width: $mobile-landscape-comments-width - ($spacing-inner * 6) - $spacing-inner !important
+                max-width: $mobile-landscape-comments-width - ($spacing-inner * 6) - $spacing-inner
+              @include tablet
+                width: $tablet-comments-width - ($spacing-inner * 5) - 40 - $spacing-inner !important
+                max-width: $tablet-comments-width - ($spacing-inner * 5) - 40 - $spacing-inner
+            .ui-tagging
+              .ui-tagging-wrap
+                @include mobile
+                  margin-left: 2px
+          .add-comment-loader
+            float: right
+            margin: -5px 0 0 $spacing-inner
+          .submit
+            cursor: pointer
+            float: right
+            font:
+              size: 75%
+              weight: normal
+            margin: $spacing-inner 0 5px 0
+      &.feed-widget-box
+        .item-left
+          @include mobile-portrait
+            width: $mobile-portrait-item-width
+          @include mobile-landscape
+            width: $mobile-landscape-item-width
+    .idea-expand-elems
+      clear: both
+      display: none
+      margin: $spacing-inner 0
+      width: $item-width
+      @include mobile-portrait
+        width: $mobile-portrait-item-width
+      @include mobile-landscape
+        width: $mobile-landscape-item-width
+      @include tablet
+        width: $tablet-item-width
+      .tags
+        .tags-prefix
+          color: $color-blue
+          float: left
+          font:
+            size: $font-size-smaller-plus
+            weight: bold
+          margin: 5px 5px 0 0
+          a
+            &.open-add-tags-link
+              @extend .link-no-styling-hover-underline
+              display: inline-block
+              font-size: $font-size-small-plus
+              height: 25px
+              line-height: 25px
+              &.inactive
+                display: none !important
+        .tags-inner
+          height: 30px
+          margin: 0 0 0 40px
+          overflow: hidden
+          .tag
+            @include linear-gradient($color-slate-lighter 0%, $color-slate-light 100%, $fallback: $color-slate-lighter)
+            @include border-bottom-radius(2px)
+            border-bottom: 2px solid $color-slate
+            float: left
+            font-size: 85%
+            line-height: 85%
+            margin: 5px 5px 0 0 !important
+            padding: 6px $spacing-inner
+            a
+              color: #fff
+              font-weight: bold
+              text-decoration: none
+        form
+          float: left
+          display: none
+          margin: 0
+          width: 100%
+        .idea-expand-tags-submit
+          clear: left
+          float: left
+          font:
+            size: 0.7em
+            weight: normal
+          line-height: 23px
+          margin: 3px 0
+        .loader
+          float: left
+        .close-add-tags-link
+          @extend .link-no-styling-hover-underline
+          color: $color-blue-medium
+          float: left
+          font:
+            size: 70%
+            weight: bold
+          line-height: 30px
+          margin: $spacing-inner 0 0 $spacing-outer
+    .item-footer
+      clear: left
+      color: $color-blue
+      font-size: $font-size-smaller-plus
+      @include mobile
+        font-size: 100%
+      & > a,
+      & > span.faux-link
+        color: $color-blue
+        display: inline-block
+        margin-left: ($spacing-inner / 2)
+        margin-right: ($spacing-inner / 2)
+        margin-top: $spacing-inner
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
+      a
+        @extend .hover-underline
+      .comments-reveal
+        @include mobile
+          display: inline-block
+          margin-left: 0
+          margin-top: $spacing-inner
+          white-space: nowrap
+      .share
+        display: inline-block
+        margin-left: ($spacing-inner / 2)
+        .share-label
+          display: inline-block
+        .share-kinds-wrap
+          display: inline-block
+          height: 23px
+          .share-btn
+            @include border-radius(2px)
+            background: transparent url(/images/two_col/share_icons.png) no-repeat 0 0
+            display: none
+            @include mobile
+              display: inline-block
+            float: left
+            height: 23px
+            margin: 6px 0 0 ($spacing-inner / 2)
+            &:first-child
+              margin-left: 0
+            width: 23px
+            &.fb
+              background-position: 0 0
+            &.twit
+              background-position: 0 -23px
+            &.email
+              background-position: 0 -46px
+        &:hover
+          .share-kinds-wrap
+            .share-btn
+              display: inline-block
+      .tags-toggle
+        @extend .link-no-styling
+      .footer-dropdown
+        display: inline-block
+        margin: 0 ($spacing-inner / 2)
+        position: relative
+        & > a
+          color: $color-blue
+          display: inline-block
+        &:hover
+          ul
+            display: block
+            z-index: 2
+        ul,
+        li
+          list-style: none
+          margin: 0
+          padding: 0
+          text-indent: 0
+        ul
+          background-color: #fff
+          border: 1px solid $color-gray-lighter
+          display: none
+          position: absolute
+          li
+            border-top: 1px solid $color-gray-lighter
+            &:first-child
+              border-top: 0
+            &:hover
+              background-color: $color-gray-lightest
+            a
+              color: $color-blue
+              display: inline-block
+              font-size: $font-size-small
+              min-width: 100px
+              padding: ($spacing-inner / 2)
+              white-space: nowrap
+      .uas-footer
+        color: $color-gray-medium
+    &.feed-notifs
+      .item.notif
+        .notifs-link
+          color: $color-blue-medium
+          text-decoration: none
+        .header
+          .user-img
+            width: 25px !important
+            height: 25px !important
+          a
+            @extend .link-no-styling-hover-underline
+            color: $color-blue
+          span
+            float: left
+            font-size: $font-size-smaller-plus
+            line-height: 25px
+            margin: 0 0 0 $spacing-inner
+            width: 530px
+        .idea
+          border-top: 0
+          .item-box
+            .idea-body
+              .idea-text-edit
+                display: none
+            .idea-body-footer
+              .idea-user-name
+                font-size: 100%
+
+@mixin widget-inner-idea-box
+  .top-box,
+  .bottom-box
+    clear: both
+    padding: $spacing-inner ($spacing-inner * 2)
+  .top-box
+    padding: $spacing-inner ($spacing-inner * 2)
+    .top-box-inner
+      padding-bottom: $spacing-inner
+      .user-image,
+      .user-name,
+      .ago
+        float: left
+      .user-name
+        margin: 10px 0 0 $spacing-inner
+        a
+          @include link-no-styling-hover-underline
+          @include opacity(0.9)
+          color: $color-black-light
+          font-weight: bold
+      .ago
+        color: $color-slate-light
+        font-size: $font-size-smaller-plus
+        margin: 13px 0 0 $spacing-inner
+  .bottom-box
+    .idea,
+    .idea-vote-box
+      display: inline-block
+      float: left
+    .idea
+      // The vote box is 33px wide.
+      width: 298px - ($spacing-inner * 2 * 2) - $spacing-inner - 33 - $spacing-inner
+      .idea-prefix
+        @include opacity(0.9)
+        color: $color-black-light
+        font-weight: bold
+    .idea-vote-box
+      margin-left: $spacing-inner
+    .bottom-box-fix
+      border-bottom: 1px solid $color-gray-outline
+      clear: both
+      height: 0

@@ -1,0 +1,71 @@
+#rich_brand_image {
+  position: relative; }
+  #rich_brand_image .follow-inner {
+    bottom: 10px;
+    left: 214px;
+    position: absolute; }
+  #rich_brand_image .logo {
+    left: 10px;
+    position: absolute; }
+    @media only screen and (max-width: 479px) {
+      #rich_brand_image .logo {
+        margin-top: 0 !important;
+        top: 4px !important;
+        width: 20%;
+        max-width: 20%; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      #rich_brand_image .logo {
+        margin-top: 0 !important;
+        top: 4px !important;
+        width: 30%;
+        max-width: 30%; } }
+  #rich_brand_image .rich-brand-image {
+    margin-top: 4px; }
+  #rich_brand_image .stat-boxes-wrapper {
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    padding: 8px 20px;
+    position: absolute;
+    border-top-right-radius: 1px; }
+  #rich_brand_image .stat-boxes .stat-box {
+    border-right: 1px solid #cccccc;
+    color: #19b4e5;
+    float: left;
+    font-size: 12px;
+    padding: 2px 4px;
+    text-transform: lowercase; }
+    #rich_brand_image .stat-boxes .stat-box .blue-bold-numerals {
+      font-size: 120%; }
+  #rich_brand_image .stat-boxes .stat-box:first-child {
+    padding-left: 0; }
+  #rich_brand_image .stat-boxes .stat-box:last-child {
+    border-right: 0; }
+  #rich_brand_image .stat-boxes .stat-title {
+    color: #186e89;
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 90%; }
+
+#suggested_topics .suggested-topics-grid .add-wibbi {
+  width: 91px;
+  padding: 4px 0 0 4px;
+  margin: 0;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  float: left;
+  border-left: 1px solid #d9e5eb;
+  font-size: 70%;
+  font-weight: bold;
+  color: #1490b7;
+  display: block; }
+  #suggested_topics .suggested-topics-grid .add-wibbi.first-row {
+    border-bottom: 1px solid #d9e5eb; }
+  #suggested_topics .suggested-topics-grid .add-wibbi:first-child, #suggested_topics .suggested-topics-grid .add-wibbi:nth-child(4n) {
+    border-left: none;
+    width: 90px; }
+  #suggested_topics .suggested-topics-grid .add-wibbi:hover {
+    background: #d9e5eb;
+    text-decoration: underline; }

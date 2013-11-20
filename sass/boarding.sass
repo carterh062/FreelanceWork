@@ -1,0 +1,404 @@
+@import "globals.sass"
+
+$boarding-color-blue-medium: #96b1c1
+$boarding-color-blue-old: #2c86c0
+$boarding-nav-height: 34px
+$slider-nav-left: 630px
+$slider-nav-nums-top: 170px
+
+// new onboarding
+body#onboarding
+  background: #fff
+  .token-input-dropdown-facebook
+    width: 398px !important
+    &.activity
+      width: 594px !important
+    &.tags
+      width: 339px !important
+  #nav
+    height: $boarding-nav-height
+    .nav-left-inner
+      .nav-logo
+        margin-top: 0
+  #wrapper
+    padding-top: $boarding-nav-height
+    .body-wrap
+      height: 800px
+      overflow: visible !important
+    .slider-nav-nums,
+    .slider-nav-loader
+      position: absolute
+      z-index: 10
+    .slider-nav-nums
+      left: $slider-nav-left
+      top: $slider-nav-nums-top
+    .slider-nav-loader
+      left: $slider-nav-left
+      top: $slider-nav-nums-top + 20
+  .orange
+    color: #ec5c00 !important
+  .boarding-page
+    margin: 30px 0 0 0
+    .header
+      font-family: Avenir, 'Muli', sans-serif
+      height: 110px
+      width: 960px
+      .title
+        color: $color-blue-medium
+        font:
+          size: 150%
+          weight: 600
+        text-align: center
+        letter-spacing: -1pt
+      .desc
+        margin: 0px 0 0 0
+        p
+          margin: 0
+          padding: 0
+          color: $boarding-color-blue-medium
+          font:
+            size: 110%
+            weight: 300
+          line-height: 130%
+          text-align: center
+      .post, .vote_comment
+        width: 960px !important
+    .separator
+      width: 700px
+      height: 1px
+      background: #c6d1d8
+      clear: both
+      margin: $spacing-outer+10px auto
+    .boarding-right
+      &.mini-browser
+        background: transparent url(/images/boarding/mini_browser.gif) top left no-repeat
+        background-position: 80px 0
+        min-height: 450px
+      .mini-browser-wrap
+        padding-left: 80px
+        position: relative
+        .mini-browser-overlay 
+          background: rgba(150, 177, 193, 0.5)
+          display: block
+          width: 633px 
+          height: 100%
+          position: absolute 
+          top: 0 
+          left: 83px 
+          z-index: 99998
+        .mini-browser-expose
+          @include border-radius(100px !important)
+          @include box-shadow(0, 0, 10px, #96b1c1, 1, false, true)
+          background: #fff
+          position: relative
+          padding: 7px !important
+          z-index: 99999
+          &.create-betterif
+            padding: 13px !important
+        .mini-browser-nav
+          background: $boarding-color-blue-old url(/images/boarding/logo.gif) 40px 0 no-repeat
+          height: 25px
+          margin: 35px 0 0 3px
+          width: 633px
+          z-index: 2
+        .mini-browser-feed
+          margin: 0px 0 0 0
+          width: 633px
+          min-height: 360px
+          height: 362px
+          margin: 0 0 0 3px
+          overflow: scroll
+          overflow-x: hidden
+          font:
+            family: Arial, Helvetica, sans-serif
+            size: 80%
+          .inner-mini-browser-feed
+            background: white
+            margin: 0 3px 0 30px
+            width: 500px
+            .create-betterif
+              @include create-betterif
+              .create-betterif-inner
+                max-width: 500px
+                .create-betterif-tags
+                  width: 398px
+                  .tag-input
+                    width: 398px
+                  .token-input-list-facebook
+                    width: 388px
+                .create-betterif-share
+                  .share-btn
+                    background: transparent url(/images/two_col/wibbi_share_btns_small.jpg) no-repeat 0 0
+                    cursor: pointer
+                    display: block
+                    float: left
+                    height: 22px
+                    margin: 0 0 0 5px
+                    overflow: hidden
+                    width: 30px
+                    &:active
+                      @include box-shadow(0, 0, 20px, #000, 0.50, false, true)
+                    &.share-fb
+                      background-position: 0 0 
+                      &:hover
+                        background-position: 0 -21px
+                      &:active, &.active
+                        background-position: 0 -42px 
+                    &.share-twit
+                      background-position: 0 -63px 
+                      &:hover
+                        background-position: 0 -84px
+                      &:active, &.active
+                        background-position: 0 -105px 
+                .create-betterif-submit
+                  height: 30px
+                  line-height: 30px
+                  padding: 0 4px
+                  width: 130px
+          .feed
+            @include feed
+            .feed-items
+              .item
+                .item-right
+                  width: 340px
+                  .item-box
+                    .idea-body
+                      form
+                        &.edit_idea
+                          .token-input-list-facebook
+                            width: 330px !important
+                    .idea-body-footer
+                      .idea-vote-box
+                        .idea-vote-btn
+                          .inner
+                            font-size: 80%
+                        &.mini-browser-expose
+                          display: inline-block
+                      .share
+                        width: 90px
+      .your-friends-wrap
+        .friend
+          margin: $spacing-outer 0 0 0 
+          // FIXME Don't hardcode this.
+          padding-left: 60px
+          &:first-child
+            margin: 0
+          .friend-header
+            .header-elem
+              float: left
+              margin: 0 0 0 $spacing-outer
+              &:first-child
+                margin: 0
+            .user-name
+              line-height: 40px
+              a
+                color: $color-blue
+                font-weight: 200
+            .user-elems-wrapper
+              margin-top: 5px
+              font-size: 75%
+              .score-wrapper, .upvote-count, .follow-wrapper
+                display: inline-block
+                float: left
+                height: 25px
+                position: relative !important
+              .score-wrapper
+                padding-top: 0
+              .follow-wrapper
+                height: 28px !important
+                position: relative !important
+                right: 0 !important
+                .follow-btn,
+                .unfollow-btn
+                  @include border-left-radius(0px)
+                  font-size: 90%
+                  height: 28px
+                  line-height: 28px
+                  width: 40px
+                .follow-loader
+                  padding: 0 14px 0 13px
+              .upvote-count
+                @include linear-gradient(#fff 0%, $color-blue-lighter 4%, #e8f2f8 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+                border: 1px solid $color-blue-light
+                padding: 2px 6px
+                margin: 0 0 0 -1px
+                span
+                  display: block
+                  font-size: 70%
+                  line-height: 75%
+                  &:first-child
+                    color: $color-blue
+                    font-weight: bold
+                    margin: 2px 0 0 0
+                  &:last-child
+                    background: transparent url(/images/two_col/idea_vote_btns.png) no-repeat 0 -80px
+                    color: $color-blue-medium
+                    font-weight: bold
+                    height: 13px
+                    line-height: 13px
+                    margin-top: 3px
+                    overflow: hidden
+                    padding: 2px 0 0 10px
+                &.ideas
+                  span:last-child
+                    background-position: 0 -97px
+                    padding-left: 13px
+                &:first-child
+                  @include border-left-radius(2px)
+        .friend-most-interesting-activity-item
+          clear: both
+          margin: $spacing-inner 0 0 0
+          .item
+            float: left
+            &.item-action
+              max-width: 40px
+              width: 40px
+              overflow: wrap
+              font-size: 70%
+              text-align: center
+              color: $boarding-color-blue-medium
+              font-weight: 600
+            &.feed
+              @include feed
+              .feed-items
+                .item
+                  .img-wrapper
+                    display: none
+                  .item-right
+                    width: 600px
+                    .token-input-list-facebook
+                      width: 585px
+      .your-profile-wrap
+        // FIXME Don't hardcode this.
+        margin-left: 215px
+        form.profile-form
+          div.errors
+            margin-bottom: 20px
+            margin-left: 0
+            p
+              font-weight: bold
+          width: 350px
+          div.gender
+            label
+              cursor: pointer
+            input
+              margin-left: 20px
+              &:first-child
+                margin-left: 0
+          legend
+            color: $boarding-color-blue-medium
+            padding: 0 10px
+            margin: 0 0 0 -10px
+            font-weight: 400
+            text-align: left
+          .upload-photo
+            border: 3px dotted $boarding-color-blue-medium
+            padding-left: 0
+            padding-right: 0
+            text-align: center
+            ol
+              list-style: none
+              margin-left: 0
+              padding-left: 0
+          #user_image_input
+            label
+              display: none
+          input#user_image
+            margin: 15px auto 0
+            font-size: 80%
+          .full-profile
+            .half, .full
+              padding: 0 5px
+              font-size: 90%
+              @include apply-placeholder-styles
+                color: $boarding-color-blue-medium
+            .half
+              width: 158px
+              height: 28px
+              line-height: 28px
+              border: 1px solid $boarding-color-blue-medium
+              &:first-child
+                margin: 0 5px 0 3px 
+            .full
+              width: 333px
+              height: 28px
+              line-height: 28px
+              margin: 5px 0 0 3px 
+              border: 1px solid $boarding-color-blue-medium
+            .dual-row
+              margin: 5px 0 0 0
+              input
+                float: left
+            .birthday
+              label
+                color: $color-gray
+                float: left
+                font-weight: normal
+              div
+                display: inline-block
+                float: right
+                padding-top: $spacing-inner / 4
+                select
+                  float: right
+                  margin: 2px 0 0 2px
+                  width: 90px
+          .agreeToTerms
+            margin: 5px 0 0 3px
+            font-size: 70%
+            color: #546c7b
+            line-height: 150%
+            input, label
+              cursor: pointer
+              float: left
+            input
+              margin: 0 3px 0 0
+            label
+              width: 330px
+              a
+                font-weight: bold
+                &:active, &:hover
+                  text-decoration: underline
+    .boarding-footer
+      /* Non-mobile */
+      // CSS puts the footer under the slides, then if we're not mobile, we put them
+      // on the bottom right.
+      @media only screen and (min-width: 768px)
+        bottom: 60px
+        position: fixed
+        right: 100px
+        width: 200px
+      a.next-btn, input.getstarted-btn
+        display: block
+        padding: 7px 20px 7px 40px
+        margin: 0
+        width: 60px
+        text-decoration: none
+        font:
+          family: Avenir, 'Muli', sans-serif
+          weight: 300
+          size: 110%
+        background: #ec5c00
+        color: white
+        box-shadow: 1px 1px 0px #b54700, 2px 2px 0px #b54700, 3px 3px 0px #b54700
+        &:hover, &.active
+          background: #b54700
+          color: white
+          box-shadow: 1px 1px 0px #7f3200, 2px 2px 0px #7f3200, 3px 3px 0px #7f3200
+      input.getstarted-btn
+        border: 0
+        padding-left: 25px
+        width: 165px
+        @include mobile
+          margin-left: 90px
+      a.skip-btn
+        display: block
+        margin: 0 0 10px 45px
+        width: 20px
+        text-decoration: none
+        color: $boarding-color-blue-medium
+        font:
+          family: Avenir, 'Muli', sans-serif
+          weight: 300
+          size: 90%
+        &:hover
+          color: #ec5c00

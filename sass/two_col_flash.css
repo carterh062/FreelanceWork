@@ -1,0 +1,50 @@
+.flash {
+  background-color: #f0f6fa;
+  color: #186e89;
+  display: block;
+  font-size: 1em;
+  left: 0;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+  top: 60px;
+  /* Mobile */
+  z-index: 9999; }
+  @media only screen and (max-width: 767px) {
+    .flash {
+      top: 48px; } }
+  .flash a {
+    color: #19b4e5; }
+    .flash a:hover {
+      color: #1490b7;
+      text-decoration: underline; }
+
+.flash-inner {
+  padding-right: 25px; }
+
+#flash_error {
+  background-color: #ffeeee;
+  color: #ff3333; }
+
+.close-flash {
+  background: transparent url(/images/close_flash.png) no-repeat 0 0;
+  float: right;
+  height: 15px;
+  margin-top: 4px;
+  text-indent: -9999em;
+  width: 15px; }
+  .close-flash:hover, .close-flash:active {
+    background: transparent url(/images/close_blue_flash.png) no-repeat 0 0; }
+
+.flash-orange {
+  background: #ffe1c9;
+  color: #186e89;
+  padding: 10px 0;
+  top: 42px; }
+  .flash-orange .columns.sixteen a {
+    color: #19b4e5;
+    font-size: 1em; }
+  .flash-orange .columns.sixteen div a:last-child {
+    margin-left: 20px; }
+  .flash-orange .columns.sixteen span {
+    display: block; }

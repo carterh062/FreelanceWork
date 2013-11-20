@@ -1,0 +1,108 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+html
+  body
+    #wrapper
+      .feed
+        .feed-items
+          .item
+            .tab
+              display: none
+              form
+                margin-top: $spacing-outer
+              .tabs-wrapper
+                a
+                  &.tabbutton
+                    border-left: 1px solid $color-slate
+                    cursor: pointer
+                    margin-left: $spacing-inner
+                    padding-left: ($spacing-inner + 3px)
+                    &.active
+                      font-weight: bold
+                    &:first-child
+                      border-left: 0
+                      margin-left: 0
+                      padding-left: 0
+              &.active
+                display: block
+              &#basics_tab
+                form > a.tabbutton,
+                form > br,
+                form > h3
+                  display: none
+                .row
+                  .gender
+                    #user_is_female
+                      margin-left: 0
+                    #user_is_male
+                      margin-left: ($spacing-inner * 2)
+                  &.birthday
+                    label
+                      float: left
+                      margin-top: 12px 1px 0 0
+                      @include mobile-portrait
+                        margin-right: 0
+                    select
+                      float: left
+                      margin-left: $spacing-inner
+                      @include mobile-portrait
+                        margin-left: ($spacing-inner / 2)
+                      width: 121px
+                      &:first-child
+                        margin-left: ($spacing-inner * 2)
+                        @include mobile
+                          margin-left: ($spacing-inner / 2)
+                      @include mobile-portrait
+                        width: 72px
+                      @include mobile-landscape
+                        width: 105px
+              &#social_tab
+                #facebook_wrapper,
+                #twitter_wrapper
+                  margin-top: $spacing-inner
+                  a
+                    color: #555
+                    &:active,
+                    &:hover
+                      color: #0070A2
+                form
+                  .row
+                    &:nth-child(2n+1)
+                      border-top: 1px solid $color-gray-outline
+                      margin-top: $spacing-outer
+                      padding-top: $spacing-outer
+              &#social_tab,
+              &#email_settings_tab
+                label
+                  display: inline-block
+                  float: left
+                  margin-top: $spacing-outer
+                .social-settings
+                  a
+                    &.offon,
+                    &.onoff
+                      background: url(/images/bic_account/offon_long.png) no-repeat
+                      cursor: pointer
+                      display: inline-block
+                      height: 29px
+                      margin-right: $spacing-outer
+                      width: 106px
+                      &:active
+                        background: url(/images/bic_account/offon_long_a.png) no-repeat
+                    &.onoff
+                      background: url(/images/bic_account/onoff_long.png) no-repeat
+                      &:active
+                        background: url(/images/bic_account/onoff_long_a.png) no-repeat
+                  .pref-wrapper
+                    clear: left
+                    float: left
+                    margin-top: $spacing-inner
+                    span
+                      display: inline-block
+                      @include mobile-portrait
+                        width: 120px
+                      @include mobile-landscape
+                        width: 240px
+                    div
+                      height: 0

@@ -1,0 +1,399 @@
+@import "partner_constants.sass"
+$partner: $staples
+@import "two_col_base.sass"
+@include two-col-base
+
+@mixin clickable-tags
+  .clickable-tag
+    border: 1px solid #fff !important
+    @include border-radius(4px)
+    cursor: pointer
+    float: left
+    &.selected
+      border: 1px solid $staples-color-red !important
+    input[type=checkbox]
+      display: none
+    label
+      cursor: pointer
+
+body.staples
+  background: $staples-background-color-gray
+  font-family: "Helvetica Neue", "Helvetica", sans-serif
+  color: $staples-color-black
+  .flash
+    .close-flash
+      &:hover
+        background-image: url(/images/close_red_flash.png)
+    a
+      color: $staples-color-black
+  #flash_notice,
+  #flash_welcome
+    background-color: $staples-background-color-gray-dark
+    color: $staples-color-black
+  .idea-upvote-inactive-anim
+    background-image: url(/images/two_col/upvote_anim_red.png)
+  #nav
+    @include linear-gradient(#b00 0%, #900 100%, $fallback: #b00)
+    .nav-left-inner
+      a.nav-logo
+        background: transparent url(/images/two_col/staples/staples_logo.png) no-repeat 0 0
+        height: 29px
+        margin-top: 2px
+        width: 65px
+      .nav-search
+        .search-input
+          width: 338px
+      @include mobile-portrait
+        .nav-search
+          display: none
+      @include mobile-landscape
+        .nav-search
+          margin-left: $spacing-inner
+          width: 140px
+      .subdomain-nav-header
+        color: #fff
+        float: left
+        font:
+          size: 14px
+          weight: bold
+        margin-top: 10px
+        padding-left: $spacing-inner
+      @include mobile
+        .subdomain-nav-header
+          font-size: 70%
+          padding-left: ($spacing-inner / 2)
+  #wrapper
+    .sixteen.columns
+      background-color: $staples-background-color-gray
+      .left-col
+        background-color: $staples-background-color-gray
+        #staples_daily_win_images
+          border-top: 1px solid #ccc
+          padding-top: $spacing-inner
+          .staples-daily-win-image-inner
+            float: left
+            padding-right: $spacing-inner * 2
+            width: 60px
+            &:last-child
+              padding-right: 0
+            .delete-img-wrapper,
+            .edit-img-wrapper
+              height: 20px
+              a
+                @extend .link-no-styling-hover-underline
+                display: none
+                font-size: $font-size-small
+            &:hover
+              .delete-img-wrapper,
+              .edit-img-wrapper
+                a
+                  display: block
+          .new-img-link
+            @extend .link-no-styling
+            border-top: 1px solid #ccc
+            display: block
+            margin-top: $spacing-inner
+            padding-top: $spacing-inner
+        #staples_daily_win_video
+          margin-top: $spacing-outer
+        .create-betterif
+          background-color: #fff
+          .users-title
+            width: 70px
+          .create-betterif-tags
+            @include clickable-tags
+          .create-betterif-users
+            width: 489px
+        .staples-profile-header
+          background-color: $staples-background-color-gray-dark
+          margin-top: $spacing-inner / 2
+          padding: $spacing-inner * 2
+          .full-name
+            color: $staples-color-red
+            font-weight: bold
+        .staples-profile-header-drop
+          background-color: #fff
+          padding-bottom: $spacing-inner * 2
+          img
+            margin-left: $spacing-outer
+        .staples-daily-win-header
+          background-color: #fff
+          padding: $spacing-outer
+          p
+            margin: 0
+        .feed
+          background-color: #fff
+          .feed-items
+            .item
+              .comments-wrapper
+                .threaded-comments
+                  .threaded-comments-comment
+                    .comment-footer
+                      .comment-footer-elem.comment-vote-btn-wrapper
+                        .comment-vote-btn
+                          background-image: url(/images/two_col/threaded_comments_vote_btns_red.png)
+              .idea-box
+                .idea-body
+                  .idea-prefix
+                    color: $staples-color-red-medium
+              .idea-body-footer
+                color: $staples-color-red-medium
+                .idea-user-name
+                  color: $staples-color-red-medium
+                .footer-dropdown
+                  h2
+                    color: $staples-color-red-medium
+                    &:hover
+                      color: $staples-color-red-medium
+              &:hover
+                .idea-body-footer
+                  color: $staples-color-red-medium
+                  a, .footer-dropdown h2
+                    color: $staples-color-red-medium
+              &.idea-expand
+                .idea-box
+                  .idea-body-footer
+                    color: $staples-color-red-medium
+      .right-col
+        background-color: $staples-background-color-gray
+      .staples-daily-win-gallery-outer
+        padding: 15px 5px
+        background-color: #fff
+      .staples-daily-win-gallery
+        .staples-daily-win
+          .staples-daily-win-inner
+            h2
+              font-size: 1em
+              padding: 10px
+            .attribution-wrapper,
+            .win-date-wrapper
+              padding: 3px 0
+              a
+                color: #c00
+            .win-date-wrapper
+              font-size: $font-size-small
+            .img-link
+              display: block
+              img
+                width: 100%
+            .tag-wrapper
+              padding-top: 5px
+              .staples-daily-win-tag
+                &:last-child
+                  margin-right: 0
+            .user-link
+              word-break: break-all
+      .staples-daily-win-image,
+      .staples-profile-edit
+        background-color: #fff
+        padding: $spacing-outer
+        form
+          @include staples-forms
+          .row
+            margin-bottom: 0
+        h3
+          margin-bottom: $spacing-inner
+    .right-col
+      .widget-box
+        &.staples-daily-win
+          .widget-icon
+            display: none
+        &.visit-daily-win-gallery
+          .widget-inner
+            border: 1px solid $color-gray-lighter
+            padding: $spacing-inner
+      .user-profile-stats
+        border-top: 0
+        .widget-footer
+          border: 1px solid #ccc
+          border-top: 0
+  &.staples-daily-win
+    #wrapper
+      .sixteen.columns
+        .left-col
+          .staples-profile-header-drop
+            border-bottom: 1px solid $color-blue-lighter
+
+#wrapper .left-col .feed .filter
+  border-top: none
+  margin-top: -5px
+  padding-top: 0
+  padding-bottom: 15px
+
+#wrapper .left-col .feed .filter .filter-inner ul li a
+  color: #333
+
+#wrapper .left-col .feed .filter .filter-inner ul li.selected
+  @include box-shadow(0, 0, 10px, #ccc, $inset: true)
+  background: #ddd
+  border-color: #ccc
+  a
+    color: $staples-color-black
+
+#wrapper .left-col .feed .filter .filter-inner ul li a .dropdown-icon
+  background-image: url(/images/two_col/dropdown_triangle_gray.png)
+  margin-left: 8px
+
+.btn-gradient-blue
+  @include linear-gradient(#d66 0%, #b00 4%, #900 100%, $fallback: #900)
+  &:hover
+    @include linear-gradient(#d66 0%, #900 4%, #b00 100%, $fallback: #b00)
+
+#wrapper .left-col .feed .filter .filter-inner ul li:hover a, #wrapper .left-col .feed .filter .filter-inner ul li.selected a
+  box-shadow: none
+
+#wrapper .left-col .feed .filter .filter-inner ul li
+  background: #eee
+  border-color: #ddd
+
+#wrapper .left-col .feed .feed-items .item .idea-box .idea-body-footer
+  color: #333
+
+#wrapper .left-col .feed .feed-items .item:hover .idea-body-footer a,
+#wrapper .left-col .feed .feed-items .item:hover .idea-box .idea-body-footer
+  color: #333
+
+.tag a.name, .tag .name-faux-link, .staples-daily-win-tag, form li.token-input-token-facebook
+  border: 1px solid #ddd
+  @include border-radius(2px)
+  color: #111
+
+form li.token-input-token-facebook
+  @include linear-gradient(#fff 0%, $color-blue-lighter 65%, $color-blue-lighter 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+  p
+    color: #111
+    font-size: 0.8em
+
+.staples-red
+  color: $staples-color-red
+
+.blue-bold-numerals
+  color: $staples-color-red
+
+#rich_brand_image .stat-boxes .stat-title
+  color: #888
+
+#wrapper .left-col .feed .feed-items .item .idea-box .idea-body .idea-expand-elems .tags
+  .edit_idea
+    @include clickable-tags
+  .tags-inner
+    margin-left: 0
+
+.idea-vote-box .idea-vote-btn
+  background-image: url(/images/two_col/idea_vote_btns_red.png)
+
+#wrapper .left-col .feed .feed-items .item .idea-box .idea-body-footer .comments-cnt
+  background-image: url(/images/two_col/comments_icon_red.png)
+
+#wrapper .right-col .widget-box.user-profile-stats .widget-inner .profile-fields-wrapper .profile-field
+  border-top: none
+  border-bottom: 1px solid #ccc
+  &.split
+    padding-bottom: 0
+    padding-top: 0
+    .row
+      margin-bottom: 0
+      .columns
+        border-left: 1px solid #ccc
+        padding: 10px 0 10px 20px
+        &:first-child
+          border-left: 0
+          padding-left: 0
+        &.ct-staples_nominations-given,
+        &.ct-staples_nominations-received
+          cursor: pointer
+  &.city-and-state
+    &.clickable
+      cursor: pointer
+  &.map-canvas-wrapper
+    display: none
+    margin: 0
+    padding: 0
+    .map-canvas
+      height: 200px
+      width: 298px
+  a
+    color: #000
+    text-decoration: none
+    &:active, &:hover
+      text-decoration: underline
+    &.btn-gradient-blue
+      color: #fff
+      text-decoration: none
+
+.idea-vote-box
+  height: 50px
+
+#wrapper .left-col .create-betterif .create-betterif-inner .chars-left
+  color: $staples-color-black
+
+.btn-gradient-blue,
+#wrapper .left-col .feed .feed-items .item .idea-box .idea-body .idea-expand-elems .tags .idea-expand-tags-submit
+  border-color: $staples-color-black
+
+// Daily Win
+
+body.staples-daily-win-index
+  .staples-daily-win
+    .tag
+      float: none
+      margin: 5px 3px 0 0 !important
+      border: none
+      a.name, .name-faux-link
+        display: inline-block
+        float: none
+    width: 25%
+    padding: 10px
+    box-sizing: border-box
+    .staples-daily-win-inner
+      img
+        width: 100%
+      border: 1px solid #ddd
+      border-radius: 2px
+      .staples-daily-win-details
+        padding: 10px
+
+// Responsiveness
+
+@media only screen and (min-width: 768px) and (max-width: 959px)
+  #wrapper .right-col > div
+    margin: 20px 0 0 15px
+  #wrapper .right-col .widget-box.user-profile-stats
+    width: 100%
+  .container
+    width: 100%
+    .sixteen.columns
+      width: 100%
+    .column, .columns
+      margin: 0
+    .two-thirds.column
+      position: absolute
+      left: 0
+      right: 330px
+    .one-third.column
+      position: absolute
+      right: 15px
+      width: 300px
+  #nav
+    .nav-search
+      position: absolute
+      right: 0
+      .search-input
+        width: auto
+
+@include mobile
+  #nav
+    .sixteen.columns
+      width: auto
+      margin-left: 10px
+      margin-right: 10px
+  .rich-brand-image
+    width: 100%
+  #wrapper
+    width: 100%
+    .column
+      float: none
+    .sixteen.columns
+      width: 100%
+      
+

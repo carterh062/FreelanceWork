@@ -1,0 +1,164 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+$betterific-root-width: 310px
+
+body
+  background: $color-blue-lighter
+  margin: 0
+  padding: 0
+  position: relative
+  font:
+    size: 1em
+    family: Arial, Helvetica, sans-serif
+
+#raphael-overlay 
+  position: absolute 
+  top: 0 
+  left: 0 
+  min-width: 100% 
+  min-height: 100% 
+  pointer-events: none 
+  z-index: 999999 
+  background: no-repeat 
+  overflow: hidden 
+
+#betterific_root
+  margin: 0
+  padding: 4px
+  width: $betterific-root-width
+  #sign_up
+    border-top: 1px solid #ccc
+    margin: 0 10px 5px 10px
+    padding-top: 5px
+  .clear
+    clear: both
+    height: 0
+  .idea-box-wrapper
+    font:
+      size: 80%
+    height: 65px
+    padding: 5px
+    .user-img
+      float: left
+      width: 40px
+    .idea-vote-box
+      float: left
+    .idea-box
+      float: left
+      padding-right: 5px
+      width: ($betterific-root-width - 40 - 40 - 5 - 10)
+      .idea-body
+        height: 50px
+        .idea-body-inner
+          max-height: 64px
+          overflow: hidden
+        .idea-prefix
+          color: $color-blue-medium
+          font:
+            weight: bold
+        a.ct-idea-time-ago
+          display: block
+          font:
+            size: 75%
+    .idea-upvote-inactive-anim
+      background: transparent url(/images/two_col/upvote_anim.png) 0 0 no-repeat
+      background-size: 100%
+      width: 16px
+      height: 20px
+      display: none
+      position: absolute
+      // FIXME Why are these margins necessary?
+      margin-top: 6px
+      margin-left: 45px
+      top: 0
+      left: 0
+  .search-input
+    @include border-radius(1px)
+    border-top: 1px solid #000
+    background: white url(/images/two_col/nav_search_bg.gif) no-repeat top right
+    border: none
+    padding: 0 26px 0 5px
+    width: $betterific-root-width - 31
+    height: 22px
+    margin: 10px 0
+    font:
+      size: 75%
+    @include apply-placeholder-styles
+      color: $color-gray-medium
+    &:focus
+      border: none
+      outline: none
+      @include apply-placeholder-styles
+        color: $color-gray-dark
+  .stat-box-wrapper
+    border: 1px solid $color-blue-light
+    border-bottom-width: 2px
+    width: $betterific-root-width - 2
+    .stat-box
+      border-left: 1px solid #ccc
+      display: inline-block
+      float: left
+      margin: 0
+      padding: ($spacing-inner/2) ($spacing-inner*2)
+      color: $color-blue-medium
+      font:
+        size: 80%
+        weight: bold
+      span
+        display: block
+        &.blue-bold-numerals
+          font:
+            size: 150%
+        &:last-child
+          background: transparent url(/images/two_col/idea_vote_btns.png) no-repeat 0 -80px
+          padding-left: 13px
+      &.betterif-count
+        span
+          &:last-child
+            background-position: 0 -96px
+      &:first-child
+        border-left: 0
+        padding-left: ($spacing-inner/2) * 7
+
+#promoter
+  padding: 0 10px 5px 10px
+  p
+    color: #7b7b7b
+    font-family: 'PT Sans', 'Times New Roman', serif
+    font-size: 13px
+    font-weight: 700
+    filter: alpha(opacity=95)
+    opacity: 0.95
+    margin-top: 0
+    text-align: center
+    a
+      color: $color-blue-dark
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+div
+  &.slider-nav-wrap
+    margin: 25px auto 0
+    display: block
+    .prev, .next
+      width: 8px
+      height: 20px
+      background: transparent url(/images/landing/slider_nav_elems.png) no-repeat
+      text-indent: -9999px
+      overflow: hidden
+      display: block
+    .prev
+      float: left
+      background-position: 0 0
+    .next
+      background-position: 0 -20px
+  &.slider-nav-divider
+    float: left
+    width: 20px
+    height: 20px
+    background: transparent url(/images/landing/slider_nav_elems.png) 0 -80px no-repeat
+    text-indent: -9999px
+    overflow: hidden
+    display: block

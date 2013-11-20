@@ -1,0 +1,493 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+html
+  #wrapper
+    .right-col
+      #add_a_photo
+        .widget-inner
+          padding: $spacing-inner ($spacing-inner * 2)
+          .top-box
+            padding-top: $spacing-inner
+          .middle-box,
+          .bottom-box
+            padding-top: ($spacing-inner * 2)
+          .top-box
+            font:
+              size: $font-size-plus
+              weight: bold
+          .bottom-box
+            text-align: center
+            a
+              @include border-radius(4px)
+              background-color: $color-blue
+              color: #fff
+              display: inline-block
+              padding: $spacing-inner ($spacing-outer * 3)
+              text-decoration: none
+              &:hover
+                background-color: $color-blue-medium
+      #like_us
+        .top-box,
+        .bottom-box
+          padding: $spacing-inner ($spacing-inner * 2)
+          text-align: center
+        .bottom-box
+          .fb,
+          .text,
+          .tw
+            float: left
+          .fb,
+          .tw
+            width: 44px
+            a
+              background: transparent url(/images/partners/logo_facebook.36.png) no-repeat 0 0
+              display: inline-block
+              height: 36px
+              margin-left: $spacing-inner
+              text-indent: -9999em
+              width: 36px
+          .tw
+            a
+              background: transparent url(/images/partners/logo_twitter.36.png) no-repeat 0 0
+              width: 44px
+          .text
+            margin-left: $spacing-inner + 4px
+            width: 298px - (44px * 2) - ($spacing-inner * 4) - ($spacing-inner * 2)
+          .tw
+            margin-left: $spacing-inner - 4px
+      #member_of_the_day
+        .top-box,
+        .bottom-box,
+        .share
+          clear: both
+          padding: $spacing-inner ($spacing-inner * 2)
+        .top-box
+          padding: $spacing-inner ($spacing-inner * 2)
+          .top-box-inner
+            border-bottom: 1px solid $color-gray-outline
+            padding-bottom: $spacing-inner
+            .user-image,
+            .user-name
+              float: left
+            .user-name
+              margin: 35px 0 0 $spacing-inner
+              a
+                @include link-no-styling-hover-underline
+                color: $color-slate-light
+            .user-score
+              color: $color-slate-light
+              float: right
+              margin-top: 30px
+              .score
+                font-size: 150%
+              .label
+                font-size: $font-size-smaller-plus
+                text-transform: uppercase
+        .bottom-box
+          .idea,
+          .idea-vote-box
+            display: inline-block
+            float: left
+          .idea
+            // The vote box is 33px wide.
+            width: 298px - ($spacing-inner * 2 * 2) - $spacing-inner - 33 - $spacing-inner
+            .idea-prefix
+              @include opacity(0.9)
+              color: $color-black-light
+              font-weight: bold
+          .idea-vote-box
+            margin-left: $spacing-inner
+        .share
+          text-align: center
+          .share-btn
+            @include border-radius(4px)
+            background-color: $color-blue
+            color: #fff
+            padding: $spacing-inner ($spacing-outer * 3)
+            text-decoration: none
+            &:hover
+              background-color: $color-blue-medium
+      #qod
+        .widget-icon
+          margin: 5px 10px 0 0
+      #travel_contest
+        // FIXME Remove this.
+        display: none
+        a
+          @include link-no-styling-hover-underline
+          color: $color-blue
+        .widget-inner
+          padding: $spacing-inner
+          .contest-details
+            margin-top: $spacing-inner
+            ul
+              padding: $spacing-inner 0 0 $spacing-outer
+              li
+                line-height: 1.4em
+                list-style-type: disc
+            span.idea
+              display: inline-block
+              margin-top: $spacing-inner
+            & > div
+              border-top: 1px solid #ccc
+              margin-top: ($spacing-inner * 2)
+              padding-top: $spacing-inner
+      #thought_leaders,
+      #user_statistics
+        .widget-inner
+          color: $color-blue-dark
+          a
+            display: inline-block
+            float: left
+          div.last
+            clear: left
+            display: block
+            float: none
+          .user-name
+            display: inline-block
+            line-height: 25px
+            margin: $spacing-inner 0 0 $spacing-inner
+            overflow: hidden
+            a
+              color: $color-slate-light
+          .user-elems-wrapper
+            float: right
+            padding: 0
+            .score-wrapper, .upvote-count, .follow-wrapper
+              display: inline-block
+              float: left
+              height: 29px
+              position: relative !important
+            .score-wrapper
+              padding-top: 0
+            .follow-wrapper
+              .follow-btn,
+              .unfollow-btn
+                display: none
+            .upvote-count
+              @include linear-gradient(#fff 0%, $color-blue-lighter 4%, #e8f2f8 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+              border: 1px solid $color-blue-light
+              padding: 0 ($spacing-inner / 2)
+              span
+                display: block
+                font:
+                  size: $font-size-smallest
+                  weight: bold
+                &:first-child
+                  color: $color-blue
+                  line-height: $font-size-smaller
+                  margin-top: ($spacing-inner / 2)
+                &:last-child
+                  background: transparent url(/images/two_col/idea_vote_btns.png) no-repeat 0 -80px
+                  color: $color-blue-medium
+                  height: 13px
+                  line-height: 13px
+                  margin-top: 2px
+                  overflow: hidden
+                  padding: 0 0 0 10px
+              &.ideas
+                span:last-child
+                  background-position: 0 -97px
+                  padding-left: 13px
+              &:first-child
+                @include border-left-radius(2px)
+          .wtf-single
+            &:hover
+              .user-elems-wrapper
+                .follow-wrapper
+                  .follow-btn,
+                  .unfollow-btn
+                    display: inline-block
+      #user_statistics
+        .header
+          .widget-icon
+            background-position: 0 -84px
+            width: 30px
+        .widget-inner
+          .wtf-single-inner
+            height: 40px
+            a.wtf-name
+              color: $color-blue
+              font-size: $font-size-big
+            &:hover
+              a
+                display: inline-block
+          .user-elems-wrapper
+            clear: both
+            float: none
+            margin-top: $spacing-inner
+            position: relative
+          &.in-the-works
+            border-top: 1px solid $color-blue-light
+            color: $color-blue-medium
+            font-size: $font-size-big
+            padding: $spacing-inner
+            .in-the-works-inner
+              background: transparent url(/images/two_col/widget_icons.png) no-repeat 0 -54px
+              height: 26px
+              padding: 4px 0 0 40px
+          &.statistics
+            color: black
+            padding: $spacing-inner
+            .submitted
+              font-size: $font-size-plus
+            .comments
+              background: transparent url(/images/two_col/idea_stats_icons.png) no-repeat 0 0
+              height: 16px
+              line-height: 16px
+            .views
+              background: transparent url(/images/two_col/idea_stats_icons.png) no-repeat 0 -16px
+              height: 16px
+              line-height: 16px
+            .upvotes
+              background: transparent url(/images/two_col/idea_stats_icons.png) no-repeat 0 -32px
+              height: 16px
+              line-height: 16px
+            .comments, .views, .upvotes
+              color: $color-gray-darker
+              font:
+                weight: bold
+              margin: ($spacing-inner / 2) 0
+              padding-left: 20px
+      #related_ideas
+        .widget-inner
+          @include widget-inner-idea-box
+      #social_media_invite
+        .header
+          .widget-name
+            width: 200px
+          .widget-icon
+            width: 63px
+            img
+              &.only-fb
+                display: none
+        &.only-fb
+          .header
+            .widget-icon
+              width: 25px
+            .widget-name
+              width: 240px
+        .widget-inner
+          .button-wrapper
+            padding: ($spacing-inner * 2) $spacing-inner
+            .fb-button,
+            .tw-button
+              border: none
+              cursor: pointer
+              height: 30px
+              outline: none
+              width: 50px
+            .fb-button
+              background: url(/images/share_icons/facebookBIG.png)
+              margin-left: (298 - (2 * $spacing-inner) - (2 * 50) - 20) / 2
+              &:hover,
+              &.active
+                background: url(/images/share_icons/facebookBIG_h.png)
+            .tw-button
+              background: url(/images/share_icons/twitterBIG.png)
+              margin-left: $spacing-outer
+              &:hover,
+              &.active
+                background: url(/images/share_icons/twitterBIG_h.png)
+            .loader
+              margin-left: $spacing-inner
+          .fb-msg,
+          .tw-msg
+            display: none
+            margin: 0 $spacing-outer
+            form
+              textarea
+                @include input-field
+                width: 246px
+              a
+                @include btn-gradient-blue
+                float: right
+                padding: 0 ($spacing-inner / 2)
+              div
+                clear: right
+        &.only-fb
+          .header
+            .widget-icon
+              img
+                display: none
+                &.only-fb
+                  display: inline-block
+          .widget-inner
+            .button-wrapper
+              .fb-button
+                margin-left: (298 - (2 * $spacing-inner) - (1 * 50)) / 2
+      #trending
+        .widget-inner
+          color: $color-blue
+          padding: $spacing-inner
+          a
+            color: $color-blue
+            text-decoration: none
+            &:hover
+              text-decoration: underline
+      #washington_nationals_contest
+        padding: 10px 0 10px 90px
+        img
+          height: 100px
+          width: 100px
+      #who_to_follow
+        .widget-inner
+          .wtf-single
+            .wtf-single-inner
+              .follow-wrapper
+                margin-top: 5px
+      .widget-box
+        &.user-profile-stats
+          border-left: none
+          border-right: none
+          width: 300px
+          .widget-inner
+            .profile-fields-wrapper
+              border-left: 1px solid $color-gray-lighter
+              border-right: 1px solid $color-gray-lighter
+              .profile-field
+                border-top: 1px solid $color-gray-lighter
+                padding: $spacing-inner
+                &:first-child
+                  border-top: 0
+            .user-image
+              position: relative
+              .image-wrapper
+                height: 300px
+                overflow: hidden
+                width: 300px
+              .image-overlay
+                @include box-shadow(0, -70px, 50px -50px, $color-slate, 1, false, true)
+                height: 300px
+                left: 0
+                position: absolute
+                top: 0
+                width: 300px
+                z-index: 99
+              .user-profile-header
+                bottom: $spacing-inner
+                left: $spacing-inner
+                position: absolute
+                width: 100%
+                z-index: 100
+                .score-wrapper
+                  float: left
+                .user-name
+                  @include hover-underline
+                  float: left
+                  margin: 0 0 0 $spacing-inner
+                  line-height: 25px
+                  color: #fff
+                  font-size: 100%
+                .follow-wrapper
+                  float: right
+                  margin-right: ($spacing-inner * 2) - 2px // Why -2px here?
+            .stat-box-wrapper
+              border-left: 1px solid $color-slate-lightest
+              border-right: 1px solid $color-slate-lightest
+              padding: $spacing-inner 0
+              width: 298px
+              .stat-box
+                color: $color-blue-medium
+                display: inline-block
+                float: left
+                font:
+                  size: $font-size-smaller-plus
+                  weight: bold
+                margin: ($spacing-inner/2) 0
+                padding: ($spacing-inner/2) ($spacing-inner*2)
+              .upvote-count
+                border-left: 1px solid $color-slate-lightest
+                position: relative !important
+                width: 66px
+                &:first-child
+                  border-left: 0
+                span
+                  color: $color-slate-light
+                  display: block
+                  font-weight: normal
+                  &:first-child
+                    font-size: 20px
+                  &:last-child
+                    height: 13px
+                    line-height: 13px
+                    text-transform: uppercase
+        .widget-inner
+          &.image-grid
+            padding-left: ($spacing-inner*2)
+            a
+              display: inline-block
+              height: 40px
+              margin: $spacing-inner 0 0 $spacing-inner
+              width: 40px
+          &.stat-boxes
+            .stat-box
+              border-right: 1px solid #ccc
+              display: inline-block
+              float: left
+              margin: ($spacing-inner/2) 0
+              padding: ($spacing-inner/2) ($spacing-inner*2)
+              .stat-title
+                color: $color-blue-medium
+          &.wtf
+            border-bottom: 1px solid $color-blue-light
+            .wtf-single
+              height: 48px
+              margin-top: $spacing-inner
+              padding: 0 ($spacing-inner * 2)
+              position: relative
+              &:last-child
+                .wtf-single-inner
+                  border-bottom: 0
+              .wtf-single-inner
+                border-bottom: 1px solid $color-gray-outline
+                height: 40px
+                margin-bottom: $spacing-inner
+                padding-bottom: $spacing-inner
+                & > a
+                  &:first-child
+                    @include tinyc-image-dimensions
+                    display: inline-block
+                    float: left
+                    .wtf-img
+                      @include tinyc-image-dimensions
+                      float: left
+                .follow-wrapper
+                  float: right
+                  .follow-btn,
+                  .unfollow-btn
+                    display: none
+                .wtf-name
+                  @include link-no-styling-hover-underline
+                  color: $color-slate-light
+                  float: left
+                  font-size: $font-size-small
+                  line-height: 25px
+                  margin: $spacing-inner 0 0 $spacing-inner
+                  max-width: 130px
+                  overflow: hidden
+                  width: 130px
+                &:hover
+                  .follow-wrapper
+                    .follow-btn,
+                    .unfollow-btn
+                      display: inline-block
+        .widget-cache
+          display: none
+        .widget-footer
+          display: inline-block
+          float: right
+          margin-top: ($spacing-inner * 2)
+          .widget-footer-nav
+            height: 25px
+            width: 100%
+            .prev,
+            .next
+              @include next-prev-link
+              padding: 0
+              width: 40px
+            .prev-wrapper
+              display: inline-block
+              float: left
+              width: 40px

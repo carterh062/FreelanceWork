@@ -1,0 +1,263 @@
+input[type=checkbox] {
+  cursor: pointer; }
+
+#bic_left {
+  margin-left: 0; }
+  #bic_left #left_filters {
+    margin-top: 0; }
+    #bic_left #left_filters .list-header {
+      font-weight: bold;
+      color: #333333;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #eeeeee; }
+
+a.action, select {
+  background-color: white;
+  border: 1px solid #cccccc;
+  color: #656565;
+  display: inline-block;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: bold;
+  padding: 6px;
+  -khtml-border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+select {
+  cursor: pointer;
+  outline: 0;
+  padding-left: 8px;
+  padding-right: 25px;
+  -webkit-appearance: none;
+  background: url(/images/dashboard/select_drop_triangle.png) no-repeat 90% center; }
+
+tr {
+  font-size: 12px;
+  height: 35px; }
+  tr.even {
+    background-color: #f0f0f0; }
+  tr.hovered, tr.even.hovered, tr.odd.hovered {
+    background-color: #e2f2fa;
+    cursor: pointer; }
+  tr.header.hovered {
+    background-color: white;
+    cursor: default; }
+  tr td, tr th {
+    padding-left: 15px; }
+    tr td:last-child, tr th:last-child {
+      padding-right: 15px; }
+    tr td.votes, tr th.votes {
+      min-width: 50px; }
+
+thead tr.even {
+  background-color: white; }
+
+td.idea_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold; }
+
+#dashboard_logo {
+  display: inline-block;
+  height: 29px;
+  margin-left: -10px;
+  margin-top: 4px;
+  width: 157px; }
+
+#dashboard_logo img {
+  padding-top: 4px; }
+
+#bic_dashboard_top {
+  background-color: #f0f0f0;
+  margin-top: 75px; }
+  #bic_dashboard_top #stats_time {
+    background-color: white;
+    float: left;
+    margin: 9px 0 0 15px; }
+  #bic_dashboard_top h3 {
+    color: #656565;
+    float: left;
+    font-size: 16px;
+    margin: 15px auto; }
+  #bic_dashboard_top .stats {
+    margin: 10px 0 10px 15px; }
+    #bic_dashboard_top .stats:first-child {
+      border-left: 1px solid white;
+      padding-left: 15px; }
+
+#listen_and_respond {
+  padding-top: 0; }
+
+#divider {
+  margin-top: 20px; }
+  #divider .ui-tabs-nav#main_tabs {
+    margin: 0 auto;
+    width: 960px; }
+    #divider .ui-tabs-nav#main_tabs li a {
+      cursor: pointer;
+      display: inline-block;
+      height: 23px;
+      padding: 2px 15px;
+      background: #eeeeee; }
+    #divider .ui-tabs-nav#main_tabs li.ui-state-active a {
+      background: white; }
+    #divider .ui-tabs-nav#main_tabs li.ui-state-hover {
+      border-color: #cccccc; }
+  #divider .dashboard-content-wrapper {
+    border-top: 1px solid #eeeeee;
+    margin-top: -1px; }
+    #divider .dashboard-content-wrapper .dashboard-content-right {
+      border-left: 2px solid #eeeeee;
+      padding-left: 10px;
+      width: 780px;
+      box-sizing: border-box; }
+      #divider .dashboard-content-wrapper .dashboard-content-right h3 {
+        color: #656565; }
+  #divider #options {
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 4px;
+    padding-bottom: 20px; }
+    #divider #options li {
+      float: left;
+      margin-left: 15px; }
+  #divider #listen_and_respond_inner {
+    padding-left: 0; }
+    #divider #listen_and_respond_inner table {
+      border-top: 1px solid #eeeeee; }
+      #divider #listen_and_respond_inner table th {
+        height: 40px;
+        color: #999999;
+        text-align: left; }
+        #divider #listen_and_respond_inner table th span {
+          border-bottom: 1px dotted #cccccc;
+          display: inline-block;
+          padding-bottom: 1px; }
+      #divider #listen_and_respond_inner table span.status {
+        -khtml-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        color: white;
+        display: inline-block;
+        padding: 1px 3px; }
+      #divider #listen_and_respond_inner table span.complaint {
+        background-color: #b9b9b9; }
+      #divider #listen_and_respond_inner table span.flagged {
+        background-color: #f26753; }
+      #divider #listen_and_respond_inner table span.idea_in_action {
+        background-color: #d0e397; }
+      #divider #listen_and_respond_inner table span.read {
+        background-color: #ff9f00; }
+      #divider #listen_and_respond_inner table span.replied {
+        background-color: #a4cadc; }
+      #divider #listen_and_respond_inner table span.unread {
+        background-color: #00ef45; }
+    #divider #listen_and_respond_inner.idea-pane {
+      padding-left: 0;
+      width: 779px; }
+  #divider #idea_wrapper .ui-tabs-nav {
+    width: 765px; }
+    #divider #idea_wrapper .ui-tabs-nav li {
+      cursor: pointer; }
+      #divider #idea_wrapper .ui-tabs-nav li:hover a {
+        color: #2288bb; }
+  #divider #listen_and_respond_inner #back {
+    background: white url("/images/dashboard/back.png") no-repeat 8px 9px;
+    padding-left: 20px;
+    padding-right: 10px; }
+    #divider #listen_and_respond_inner #back:hover, #divider #listen_and_respond_inner #back:active {
+      background-color: #e2f2fa; }
+  #divider #listen_and_respond_inner #add_tags {
+    padding-left: 15px;
+    padding-right: 4px;
+    width: 65px; }
+  #divider #listen_and_respond_inner .action:hover, #divider #listen_and_respond_inner .action:active {
+    background-color: #e2f2fa; }
+  #divider #listen_and_respond_inner .betterif-inner {
+    padding-top: 10px;
+    width: 765px; }
+    #divider #listen_and_respond_inner .betterif-inner .bic-ideas-wrapper {
+      float: left;
+      padding-right: 20px;
+      width: 540px; }
+    #divider #listen_and_respond_inner .betterif-inner .idea-left-bottom {
+      padding-left: 50px; }
+    #divider #listen_and_respond_inner .betterif-inner a.more-ideas-link {
+      clear: both; }
+  #divider #listen_and_respond_inner .bic-idea {
+    float: left;
+    width: 540px; }
+    #divider #listen_and_respond_inner .bic-idea .comments {
+      font-size: 16px; }
+  #divider #listen_and_respond_inner .bic-idea-tags {
+    float: left;
+    padding-left: 10px;
+    width: 195px; }
+    #divider #listen_and_respond_inner .bic-idea-tags h3 {
+      font-size: 16px; }
+  #divider #idea_wrapper.ui-tabs {
+    -khtml-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    #divider #idea_wrapper.ui-tabs .ui-tabs-nav {
+      -khtml-border-radius: 0;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid #dddddd;
+      height: 34px;
+      margin-left: -2px;
+      padding-left: 0;
+      padding-top: 0; }
+      #divider #idea_wrapper.ui-tabs .ui-tabs-nav li {
+        background: white;
+        border: 0;
+        border-left: 1px solid #dddddd;
+        -khtml-border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        height: 24px;
+        margin: -1px 0 0 0;
+        padding: 5px 15px; }
+        #divider #idea_wrapper.ui-tabs .ui-tabs-nav li:first-child {
+          border-left: none; }
+        #divider #idea_wrapper.ui-tabs .ui-tabs-nav li:last-child {
+          border-right: 1px solid #dddddd; }
+        #divider #idea_wrapper.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+          padding-bottom: 6px; }
+          #divider #idea_wrapper.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+            color: #2288bb; }
+        #divider #idea_wrapper.ui-tabs .ui-tabs-nav li a {
+          font-weight: bold;
+          margin-top: 5px;
+          width: 80px; }
+          #divider #idea_wrapper.ui-tabs .ui-tabs-nav li a:hover, #divider #idea_wrapper.ui-tabs .ui-tabs-nav li a:active {
+            color: #2288bb; }
+  #divider .bic-idea-tags #action_section {
+    clear: both;
+    margin-top: 5px; }
+  #divider .bic-idea-tags .follow-inner {
+    float: left;
+    height: 40px; }
+  #divider .bic-idea-tags #stats_wrapper {
+    clear: both; }
+
+/** LIST PANE ** */
+/*IDEA PANE ** */
+/** INSET TABS ** */
+/* Taken from bic_account.css. */
+/* Taken from bic_idea.css. */
+.idea-details {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #666666;
+  padding-top: 20px;
+  line-height: 20px; }

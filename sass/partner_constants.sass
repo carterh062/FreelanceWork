@@ -1,0 +1,13 @@
+// To add a new partner, add 2 new files:
+//   <partner>.sass
+//   <partner>_two_col.sass
+// Then, add
+//   @import "<partner>.sass"
+//   $is-<partner>: ($partner == $<partner>)
+// to globals.sass.
+// Finally, add
+//   $<partner>: '<partner>'
+// to partner_constants.sass (this file).
+$partner: null !default
+$staples: 'staples'
+$whole-foods: 'whole-foods'

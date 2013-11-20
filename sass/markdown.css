@@ -1,0 +1,68 @@
+html {
+  height: 100%; }
+
+body {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif; }
+  body .strikethrough {
+    text-decoration: line-through; }
+  body ul {
+    line-height: 1.3em; }
+    body ul li {
+      list-style-type: disc;
+      margin-bottom: 4px; }
+      body ul li ul {
+        margin: 0;
+        padding: 0; }
+        body ul li ul li {
+          list-style-type: circle;
+          margin-left: 18px; }
+    body ul > li {
+      line-height: 22px; }
+  body #nav .sixteen.columns {
+    width: 960px; }
+    body #nav .sixteen.columns .nav-drop li {
+      list-style-type: none; }
+    body #nav .sixteen.columns .two-thirds {
+      float: left;
+      margin-right: 10px;
+      width: 620px; }
+    body #nav .sixteen.columns .one-third {
+      float: left;
+      margin-left: 10px;
+      width: 300px; }
+      body #nav .sixteen.columns .one-third .login a {
+        color: white; }
+  body #wrapper .sixteen.columns {
+    background-color: white;
+    margin: 0 10px;
+    padding: 20px 16px 0; }
+    body #wrapper .sixteen.columns h1, body #wrapper .sixteen.columns h2, body #wrapper .sixteen.columns h3, body #wrapper .sixteen.columns h4, body #wrapper .sixteen.columns h5 {
+      text-rendering: optimizelegibility; }
+    body #wrapper .sixteen.columns a {
+      color: #186e89;
+      cursor: pointer;
+      text-decoration: none; }
+    body #wrapper .sixteen.columns code {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: #eeeeee;
+      border: 1px solid #aaaaaa;
+      display: inline-block;
+      font-size: 85%;
+      margin: 5px 0;
+      padding: 5px 10px; }
+    body #wrapper .sixteen.columns #betterific_container {
+      margin: 0 auto; }
+    body #wrapper .sixteen.columns ul code {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background-color: #f8f8f8;
+      border: 1px solid #dddddd;
+      font-size: 65%;
+      margin: 0;
+      padding: 0 2px; }

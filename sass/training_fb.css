@@ -1,0 +1,35 @@
+.hidden {
+  display: none; }
+
+label, input {
+  cursor: pointer; }
+
+a.previous,
+a.new {
+  text-decoration: underline; }
+
+form.formtastic > fieldset.inputs {
+  border-top: 1px solid #cccccc; }
+
+fieldset {
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+fieldset.inputs {
+  padding-bottom: 0; }
+
+#ffp_message {
+  border: 1px solid #cccccc;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px; }
+
+#ffp_message span {
+  color: #333333;
+  display: block;
+  font-size: 80%;
+  margin-bottom: 10px; }

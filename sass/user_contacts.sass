@@ -1,0 +1,107 @@
+@import "globals.sass"
+
+$user-contacts-width: 576px
+
+body.user-contacts
+  .feed
+    padding: $spacing-outer
+    h3
+      color: $color-blue
+      margin-bottom: $spacing-inner
+    #connect_gmail_form
+      margin-top: $spacing-outer
+      input[type=submit]
+        @extend .btn-gradient-blue
+        height: 40px
+        padding: $spacing-inner
+        width: 100%
+    #user_contacts_form
+      a
+        @extend .link-no-styling
+        color: $color-blue
+      .header
+        margin-bottom: $spacing-inner / 2
+        .search
+          input[type=text]
+            @include input-field
+            margin-bottom: $spacing-inner / 2
+            padding: $spacing-inner / 2
+        .left,
+        .right
+          font:
+            size: $font-size-smaller-plus
+          a
+            &:hover
+              text-decoration: underline
+        .left
+          float: left
+        .right
+          float: right
+      .user-contacts-outer
+        clear: both
+        height: 260px
+        overflow-y: scroll
+        margin-left: -($spacing-inner / 2)
+        padding: $spacing-inner $spacing-inner $spacing-inner 0
+        width: $user-contacts-width
+        .user-contact
+          border: 1px solid $color-gray-lighter
+          @include border-radius(3px)
+          float: left
+          height: 40px
+          margin-bottom: $spacing-inner / 2
+          overflow: hidden
+          padding: ($spacing-inner/2) $spacing-inner
+          margin-left: $spacing-inner / 2
+          width: 256px
+          input[type=checkbox],
+          label
+            cursor: pointer
+            float: left
+          input
+            margin-right: $spacing-inner
+          label
+            margin-top: $spacing-inner / 2
+            width: 230px
+            word-break: break-all
+      .footer
+        float: right
+        margin-top: $spacing-inner
+        .compose-button
+          @extend .btn-gradient-blue
+          display: inline-block
+          padding-left: $spacing-inner / 2
+          padding-right: $spacing-inner / 2
+        .small
+          font:
+            size: $font-size-smaller-plus
+        .footer-inner
+          float: right
+        .footer-kicker
+          clear: right
+          float: right
+          margin-top: $spacing-inner / 2
+      .compose
+        display: none
+        textarea
+          background: #fff
+          border: 1px solid $color-gray-lighter
+          @include border-radius(2px)
+          color: $color-gray
+          display: block
+          font:
+            size: 13px
+          height: 84px
+          margin-bottom: $spacing-inner / 2
+          outline: none
+          padding: $spacing-inner / 2
+          width: $user-contacts-width - ($spacing-inner / 2) - 2
+          &:focus
+            border: 1px solid $color-gray-light
+            @include box-shadow(0, 0, 3px, rgba(0, 0, 0, .2))
+            color: $color-gray-dark
+        .footer
+          input[type=submit]
+            @extend .btn-gradient-blue
+            display: inline-block
+          display: inline-block

@@ -1,0 +1,71 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+#facebox
+  left: 0
+  position: absolute
+  text-align: left
+  top: 0
+  z-index: 100
+  /* Mine
+  a
+    text-decoration: none
+  h3
+    margin-bottom: 1em
+  /* End Mine
+  img
+    border: 0
+    margin: 0
+  .popup
+    @include border-radius(5px)
+    @include box-shadow(0, 0, 18px, rgba(0,0,0,0.4))
+    border: 3px solid rgba(0,0,0,0)
+    position: relative
+    width: 960px
+  .fb-content
+    @include border-radius(4px)
+    background: #fff
+    display: table
+    padding: 10px
+    width: 940px
+    & > p:first-child
+      margin-top: 0
+    & > p:last-child
+      margin-bottom: 0
+  .close
+    background: #fff
+    padding: 2px
+    position: absolute
+    right: 5px
+    top: 5px
+    img
+      opacity: 0.3
+    &:hover
+      img
+        opacity: 1.0
+  .image,
+  .loading
+    text-align: center
+  &.dark
+    #popup_bg
+      background: none
+    .popup
+      width: auto
+    .fb-content
+      background-color: $color-gray
+      width: auto
+    a
+      .close
+        display: none !important
+
+#facebox_overlay
+  height: 100%
+  left: 0px
+  position: fixed
+  top: 0px
+  width: 100%
+  &.facebox_hide
+    z-index: -100
+  &.facebox_overlayBG
+    background-color: #000
+    z-index: 99

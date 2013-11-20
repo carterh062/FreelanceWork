@@ -1,0 +1,69 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+html 
+  height: 100%
+body
+  .strikethrough
+    text-decoration: line-through
+  color: #333
+  font-family: Arial, Helvetica, sans-serif
+  ul
+    line-height: 1.3em
+    li
+      list-style-type: disc
+      margin-bottom: ($spacing-inner / 2)
+      ul
+        margin: 0
+        padding: 0
+        li
+          list-style-type: circle
+          margin-left: 18px
+    & > li
+      line-height: 22px
+  #nav
+    .sixteen.columns
+      width: 960px
+      .nav-drop
+        li
+          list-style-type: none
+      .two-thirds
+        float: left
+        margin-right: 10px
+        width: 620px
+      .one-third
+        float: left
+        margin-left: 10px
+        width: 300px
+        .login
+          a
+            color: #fff
+  #wrapper
+    .sixteen.columns
+      background-color: #fff
+      margin: 0 10px
+      padding: $spacing-outer ($spacing-inner * 2) 0
+      h1, h2, h3, h4, h5
+        text-rendering: optimizelegibility
+      a
+        color: $color-blue-medium
+        cursor: pointer
+        text-decoration: none
+      code
+        @include border-radius(5px)
+        background-color: #eee
+        border: 1px solid #aaa
+        display: inline-block
+        font-size: 85%
+        margin: 5px 0
+        padding: 5px 10px
+      #betterific_container
+        margin: 0 auto
+      ul
+        code
+          @include border-radius(3px)
+          background-color: #f8f8f8
+          border: 1px solid #ddd
+          font-size: $font-size-smallest
+          margin: 0
+          padding: 0 2px

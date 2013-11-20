@@ -1,0 +1,144 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+
+#header .header-wrap .logo {
+  width: auto;
+  height: auto; }
+#header .header-wrap.pencils {
+  background: url(/images/two_col/staples/pencils_header.jpg); }
+#header .header-wrap.you-make-more-happen {
+  background: url(/images/two_col/staples/you_make_more_happen_header.jpg); }
+
+.tab > .tabbutton {
+  float: right;
+  cursor: pointer; }
+  .tab > .tabbutton:hover {
+    text-decoration: underline; }
+
+.staples-red {
+  color: #cc0000; }
+
+.red {
+  color: #cc0000; }
+
+.row .four.columns input[type=email],
+.row .four.columns input[type=password],
+.row .four.columns input[type=text],
+.row .four.columns select,
+.row .four.columns textarea {
+  width: 90% !important; }
+
+/* Taken from skeleton */
+input[type=submit],
+input[type=submit]:hover {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: #cc0000;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 10px 15px;
+  text-shadow: 0 1px #990000; }
+
+.field_with_errors input[type=email],
+.field_with_errors input[type=password],
+.field_with_errors input[type=text],
+.field_with_errors select,
+.field_with_errors textarea {
+  border-color: #cc0000; }
+
+#join {
+  margin-top: 40px; }
+  #join #headline {
+    text-align: center;
+    margin-top: 10px; }
+    #join #headline h2 {
+      font-weight: 500;
+      font-size: 30px; }
+    #join #headline h3 {
+      font-weight: 300;
+      line-height: 1.3em; }
+    #join #headline h3 + h3 {
+      margin: 20px 0 30px;
+      padding: 0 20%; }
+  #join form {
+    margin-bottom: 0; }
+    #join form input {
+      box-sizing: border-box;
+      margin: 4px 0;
+      width: 100%; }
+    #join form input[type=file],
+    #join form input[type=submit] {
+      cursor: pointer; }
+    #join form select {
+      margin: 4px 0 0; }
+  #join h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px; }
+  #join label {
+    margin-top: 10px; }
+  #join p.small {
+    margin-bottom: 0;
+    font-size: 12px; }
+
+.tabbed {
+  margin: 0 auto;
+  padding-bottom: 40px; }
+  .tabbed .tab {
+    display: none; }
+  .tabbed .tab.active {
+    display: block; }
+
+#forgot_password_tab p {
+  margin: 0 0 4px 0; }
+#forgot_password_tab .response a {
+  cursor: pointer; }
+  #forgot_password_tab .response a:active, #forgot_password_tab .response a:hover {
+    text-decoration: underline; }
+
+.reset-password .inner {
+  margin-top: 20px; }
+  .reset-password .inner h1 {
+    font-size: 40px;
+    margin-bottom: 20px; }
+  .reset-password .inner #reset_password_form {
+    /* Taken from skeleton */ }
+    .reset-password .inner #reset_password_form .red {
+      color: #cc0000; }
+    .reset-password .inner #reset_password_form .row .four.columns input[type=email],
+    .reset-password .inner #reset_password_form .row .four.columns input[type=password],
+    .reset-password .inner #reset_password_form .row .four.columns input[type=text],
+    .reset-password .inner #reset_password_form .row .four.columns select,
+    .reset-password .inner #reset_password_form .row .four.columns textarea {
+      width: 90% !important; }
+    .reset-password .inner #reset_password_form input[type=submit],
+    .reset-password .inner #reset_password_form input[type=submit]:hover {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background: #cc0000;
+      border: none;
+      color: white;
+      font-size: 1em;
+      font-weight: normal;
+      margin-bottom: 0;
+      margin-top: 10px;
+      padding: 10px 15px;
+      text-shadow: 0 1px #990000; }
+    .reset-password .inner #reset_password_form .field_with_errors input[type=email],
+    .reset-password .inner #reset_password_form .field_with_errors input[type=password],
+    .reset-password .inner #reset_password_form .field_with_errors input[type=text],
+    .reset-password .inner #reset_password_form .field_with_errors select,
+    .reset-password .inner #reset_password_form .field_with_errors textarea {
+      border-color: #cc0000; }
+    .reset-password .inner #reset_password_form fieldset {
+      margin-bottom: 0; }
+    .reset-password .inner #reset_password_form ol {
+      margin: 0; }

@@ -1,0 +1,504 @@
+@import "globals.sass"
+
+$social-button-height: 65px
+$social-button-width: 164px
+
+body
+  background: #ecf0ef url(/images/landing/bg.jpg) repeat
+  @include mobile-portrait
+    font-size: .6em
+  @include mobile-landscape
+    font-size: .7em
+
+.black
+  color: #000 !important
+
+div
+  &#join-trail, &#join-trail-right
+    -moz-user-select: none
+    -khtml-user-select: none
+    -webkit-user-select: none
+    -o-user-select: none
+
+$header-height: 325px
+
+#header
+  height: $header-height
+  position: relative
+  width: 100%
+  z-index: 0
+  .header-wrap
+    height: $header-height
+    position: relative
+    width: 100%
+    z-index: 25
+    .logo
+      display: block
+      height: 29px
+      margin: 20px 0 0
+      width: 140px
+    a.login-btn
+      color: #fff
+      display: block
+      float: right
+      margin: 33px 0 0
+      text-decoration: none
+      @include mobile-portrait
+        font-size: 150%
+        margin-top: 37px
+      @include mobile-landscape
+        font-size: 150%
+        margin-top: 34px
+      &:hover
+        background-position: 0 -35px
+    .betterif-head
+      color: #fff
+      cursor: pointer
+      font:
+        family: 'Muli', sans-serif
+        size: 230%
+        weight: 400
+      letter-spacing: -1px
+      line-height: 90%
+      margin: $social-button-height 0 0 0
+      div.upvote
+        float: left
+        width: 30px
+        height: 30px
+        margin: 0 10px 0 10px
+        cursor: pointer
+        background: transparent url(/images/landing/upvote_btn.png) 0 0 no-repeat
+        text-indent: -9999px
+        overflow: hidden
+        display: block
+        &:hover, &.active
+          background-position: 0 -30px
+    .betterif-content
+      color: #fff
+      font:
+        family: 'Muli', sans-serif
+        size: 115%
+        weight: 300
+      margin: 10px 0 0 0
+      width: 450px
+      @include mobile-portrait
+        clear: both
+        font-size: 1.3em
+        width: 270px
+      @include mobile-landscape
+        clear: both
+        width: 360px
+      display: none
+      div.betterif-vote-num
+        float: left
+        width: 40px
+        height: 30px
+        margin: 0 10px 0 0
+        display: block
+        text-align: center
+        &:hover
+          cursor: pointer
+      span
+        margin: 0 0 0 50px
+        display: block
+  .header-slide
+    background: #eee
+    height: $header-height
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 0
+    &.header-cheetos
+      background: url(/images/landing/header_cheetos.jpg) top center no-repeat
+    &.header-airplanes
+      background: url(/images/landing/header_airplanes.jpg) top center no-repeat
+    &.header-ups
+      background: url(/images/landing/header_ups.jpg) top center no-repeat
+    &.header-weather
+      background: url(/images/landing/header_weather.jpg) top center no-repeat
+    &.header-toilets
+      background: url(/images/landing/header_toilets.jpg) top center no-repeat
+    /* RICH BRANDS
+    &.header-arbys-red
+      background: url(/images/rich_brands/arbys_red.jpg) top center no-repeat
+    &.header-arbys-black
+      background: url(/images/rich_brands/arbys_black.jpg) top center no-repeat
+    &.header-arbys-store
+      background: url(/images/rich_brands/arbys_store.jpg) top center no-repeat
+    &.header-saxbys-coffee-espresso
+      background: url(/images/rich_brands/saxbys-coffee_espresso.jpg) top center no-repeat
+    &.header-saxbys-coffee-froyo
+      background: url(/images/rich_brands/saxbys-coffee_froyo.jpg) top center no-repeat
+    &.header-saxbys-coffee-freeze
+      background: url(/images/rich_brands/saxbys-coffee_freeze.jpg) top center no-repeat
+    &.header-usa-today-phone
+      background: url(/images/rich_brands/usa-today_phone_shift3.png) top center no-repeat
+    &.header-usa-today-paper
+      background: url(/images/rich_brands/usa-today_paper_shift4.jpg) top center no-repeat
+    &.header-usa-today-news
+      background: url(/images/rich_brands/usa-today_news_shift3.png) top center no-repeat
+    &.header-washington-nationals-blue
+      background: url(/images/rich_brands/washington-nationals_blue.jpg) top center no-repeat
+    &.header-washington-nationals-black
+      background: url(/images/rich_brands/washington-nationals_black.jpg) top center no-repeat
+    &.header-washington-nationals-fade
+      background: url(/images/rich_brands/washington-nationals_fade.jpg) top center no-repeat
+    &.header-washington-nationals-skyline
+      background: url(/images/rich_brands/washington-nationals_skyline.jpg) top center no-repeat
+    &.header-washington-nationals-stadium
+      background: url(/images/rich_brands/washington-nationals_stadium.jpg) top center no-repeat
+
+.no-portrait
+  @media only screen and (orientation: portrait)
+    display: none
+.no-landscape
+  @media only screen and (orientation: landscape)
+    display: none
+
+div
+  &.slider-nav-wrap
+    margin: 25px auto 0
+    display: block
+    .prev, .next
+      width: 8px
+      height: 20px
+      background: transparent url(/images/landing/slider_nav_elems.png) no-repeat
+      text-indent: -9999px
+      overflow: hidden
+      display: block
+    .prev
+      float: left
+      background-position: 0 0
+    .next
+      background-position: 0 -20px
+  &.slider-nav-divider
+    float: left
+    width: 20px
+    height: 20px
+    background: transparent url(/images/landing/slider_nav_elems.png) 0 -80px no-repeat
+    text-indent: -9999px
+    overflow: hidden
+    display: block
+  &.tagline
+    margin-bottom: $spacing-outer
+    @include mobile
+      margin-bottom: 0
+    h1, h2
+      color: $color-slate
+      font:
+        family: 'Muli', sans-serif
+        weight: 400
+    h1
+      font-size: 230%
+      line-height: 100%
+      letter-spacing: -1.5px
+      margin: 15px 0 0
+    h2
+      font-size: 150%
+      letter-spacing: -1px
+      @include mobile
+        line-height: 1.5em
+
+.b-blue
+  color: #2486bf !important
+  font-weight: 400
+  letter-spacing: -1px
+
+.hover-b-blue
+  color: #2486bf !important
+
+div
+  .tabbed
+    .tabbutton
+      @extend .link-no-styling-hover-underline
+      cursor: pointer
+      float: right
+    h3
+      color: $color-slate
+      font:
+        family: "Muli", sans-serif
+        weight: 400
+      margin-top: -$spacing-outer
+    .tab
+      display: none
+    .tab.active
+      display: block
+  &#join_wrap
+    @include mobile-portrait
+      width: 300px
+    min-height: 150px
+    margin: 20px auto 0
+    .social-wrap
+      height: $social-button-height
+      margin: 0 auto
+      width: 328px
+      a
+        &.fb-join-btn,
+        &.twit-join-btn
+          background: transparent url(/images/landing/twit_fb_btns.png) no-repeat
+          display: block
+          float: left
+          height: $social-button-height
+          overflow: hidden
+          text-indent: -9999px
+          width: $social-button-width
+        &.twit-join-btn
+          background-position: -$social-button-width 0
+          @media only screen and (max-width: 479px)
+            background-image: url(/images/landing/tw_btn.png)
+            background-position: 0 0
+            background-size: contain
+            // FIXME Why does tw use 53px height if it's the same size as fb?
+            height: 53px
+            width: 150px
+          &:hover
+            background-position: -$social-button-width -70px
+            @media only screen and (max-width: 479px)
+              background-image: url(/images/landing/tw_btn_pressed.png)
+              background-position: 0 0
+              background-size: contain
+              // FIXME Why does tw use 53px height if it's the same size as fb?
+              height: 53px
+              width: 150px
+        &.fb-join-btn
+          @media only screen and (max-width: 479px)
+            background-image: url(/images/landing/fb_btn.png)
+            background-position: 0 0
+            background-size: contain
+            height: 55px
+            width: 150px
+          &:hover
+            background-position: 0 -70px
+            @media only screen and (max-width: 479px)
+              background-image: url(/images/landing/fb_btn_pressed.png)
+              background-position: 0 0
+              background-size: contain
+              height: 55px
+              width: 150px
+    .floatfix
+      clear: both
+      padding: 1px
+    a.email-join-btn
+      background: transparent url(/images/landing/twit_fb_btns.png) -$social-button-height -140px no-repeat
+      display: block
+      height: 40px
+      margin: 5px auto 0
+      overflow: hidden
+      text-indent: -9999em
+      width: 200px
+      &:hover
+        background-position: -$social-button-height -190px
+    .never-share
+      background: transparent url(/images/landing/never_share.gif) 0 0 no-repeat
+      clear: both
+      width: 262px
+      height: 33px
+      margin: 5px auto 0
+      text-indent: -9999px
+      overflow: hidden
+      display: block
+    p
+      color: #7b7b7b
+      font:
+        family: 'Baskvill', 'Baskerville', 'Times New Roman', serif
+        size: 14px
+        weight: bold
+      margin-bottom: 12px
+      margin-top: 2px
+      filter: alpha(opacity = 95)
+      opacity: 0.95
+      text-align: center
+  form
+    margin-top: $spacing-outer
+    &.new_user
+      margin-top: 0
+    a
+      &.tabbutton
+        display: inline-block
+        margin-bottom: $spacing-inner
+
+#login_facebook
+  margin-bottom: $spacing-inner
+#login_twitter
+  margin-left: 3px
+#login_facebook,
+#login_twitter
+  background: transparent url(/images/partners/login_facebook.png) no-repeat 0 0
+  border: none
+  display: inline-block
+  height: 35px
+  text-indent: -9999em
+  width: 221px
+  @include mobile-portrait
+    margin-left: 27px
+  @include mobile-landscape
+    margin-left: 85px
+#login_twitter
+  background: transparent url(/images/partners/login_twitter.png) no-repeat 0 0
+
+img
+  margin: 5px 0 10px
+
+#tnw_article
+  .tnw-article
+    margin: 30px auto
+
+#footer
+  .footer
+    margin: 50px auto 10px
+    a
+      color: $color-blue-medium
+      font-size: 80%
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    .mixpanel-wrapper
+      float: right
+      margin-top: -10px
+
+#about-us-wrap
+  background: #fff
+  display: none
+  height: 340px
+  left: 0
+  position: absolute
+  top: 0
+  width: 100%
+
+#footer-window-close
+  background: transparent url(/images/landing/footer_window_close.png) 0 0 no-repeat
+  bottom: -36px
+  clear: both
+  cursor: pointer
+  display: block
+  height: 26px
+  left: 50%
+  margin-left: -13px
+  overflow: hidden
+  position: absolute
+  text-indent: -9999px
+  width: 26px
+
+.about-us-img
+  float: left
+  margin: 10px 15px 0 0
+
+.about-us-text
+  margin-top: -10px
+
+.about-us-team-wrap
+  clear: both
+  margin: 0
+  .about-us-team-member
+    float: left
+    width: 296px
+    height: 72px
+    padding: 0 7px
+    display: block
+    font:
+      family: Arial, Helvetica, sans-serif
+      size: 80%
+    .title
+      strong
+        font-size: 140%
+        margin: 0 7px 0 0
+        color: #2486bf
+      font-size: 90%
+      font-weight: 600
+      margin: 0 3px 0 0
+
+.contact-us-wrap
+  clear: both
+  padding-top: $spacing-inner
+  span
+    margin-left: round((940px - 235) / 2)
+    width: 235px
+    a
+      @extend .link-no-styling-hover-underline
+      color: $color-blue-medium
+
+.about-us-text
+  h3
+    font-size: 150%
+    font-weight: 400
+    margin: 23px 0 0 0
+    padding: 0
+  p
+    font-size: 80%
+    font-weight: 400
+    line-height: 140%
+    margin: 5px 0 0 0
+
+.about-us-join-btn
+  background: transparent url(/images/landing/about_us_join_btn.png) 0 0 no-repeat
+  cursor: pointer
+  display: block
+  height: 35px
+  margin: 10px 0 0 0
+  overflow: hidden
+  text-indent: -9999px
+  width: 430px
+  @include mobile-portrait
+    width: 300px
+  &:hover
+    background-position: 0 -40px
+
+$popup-width: 500px
+#facebox
+  .popup
+    width: $popup-width
+  .fb-content
+    color: $color-gray-dark
+    font-size: 85%
+    padding: 0
+    text-align: center
+    width: $popup-width - 40
+    div.field_with_errors
+      display: inline-block
+    #edit_preferences
+      #user_last_name,
+      #user_password_confirmation
+        margin-left: 9px
+    #sign_up_facebox
+      h3
+        color: $color-gray-dark
+        // Baseline-align the text with the X
+        margin-top: 11px
+    form.new_user
+      margin-top: 20px
+      #user_profile_pending_email
+        border: 1px solid $color-gray-lighter
+        display: inline-block
+        padding: 5px
+        width: 300px
+    p.signed-up-success
+      font-size: 16px
+      text-align: center
+    a
+      &.close
+        background: #fff url(/images/close_blue_flash.png) left top no-repeat
+        display: block !important
+        margin-top: 5px
+        text-indent: -9999em
+        width: 15px
+      &.signup
+        @extend .btn-gradient-blue
+        @include linear-gradient(#65b3d7 0%, #3097c8 4%, #2371b3 100%, $fallback: #2371b3)
+        display: inline-block
+        font-size: 1em
+        margin-top: 20px
+        padding: 5px 10px
+      &.no-thanks
+        color: $color-gray-dark
+        margin: 10px 0 20px 0
+        display: inline-block
+        font-size: 85%
+        &:hover
+          text-decoration: underline
+  &.weekly-email-signup
+    .fb-content
+      padding: ($spacing-outer / 2) $spacing-outer
+
+#weekly_email_signup_form
+  display: none

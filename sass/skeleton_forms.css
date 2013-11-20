@@ -1,0 +1,111 @@
+form .row {
+  clear: both;
+  margin-bottom: 8px; }
+  form .row.required:after {
+    color: #d40d12;
+    content: "*";
+    display: inline; }
+  form .row input[type="checkbox"],
+  form .row input[type="file"],
+  form .row label,
+  form .row select {
+    cursor: pointer; }
+  form .row select {
+    height: 30px;
+    width: 220px; }
+  form .row input[type="checkbox"],
+  form .row label {
+    display: inline; }
+  form .row input[type="email"],
+  form .row input[type="password"],
+  form .row input[type="text"],
+  form .row textarea,
+  form .row select {
+    margin-bottom: 0; }
+  form .row input[type="email"],
+  form .row input[type="password"],
+  form .row input[type="text"] {
+    display: inline;
+    width: 90%; }
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+      form .row input[type="email"],
+      form .row input[type="password"],
+      form .row input[type="text"] {
+        width: 88%; } }
+    form .row input[type="email"].full-width,
+    form .row input[type="password"].full-width,
+    form .row input[type="text"].full-width {
+      width: 438px; }
+      @media only screen and (max-width: 479px) {
+        form .row input[type="email"].full-width,
+        form .row input[type="password"].full-width,
+        form .row input[type="text"].full-width {
+          width: 270px; } }
+      @media only screen and (min-width: 480px) and (max-width: 767px) {
+        form .row input[type="email"].full-width,
+        form .row input[type="password"].full-width,
+        form .row input[type="text"].full-width {
+          width: 378px; } }
+      @media only screen and (min-width: 768px) and (max-width: 959px) {
+        form .row input[type="email"].full-width,
+        form .row input[type="password"].full-width,
+        form .row input[type="text"].full-width {
+          width: 343px; } }
+  form .row input[type=submit] {
+    width: 450px; }
+    @media only screen and (max-width: 479px) {
+      form .row input[type=submit] {
+        width: 280px; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      form .row input[type=submit] {
+        width: 388px; } }
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+      form .row input[type=submit] {
+        width: 353px; } }
+  form .row textarea {
+    font-family: Arial, Helvetica, sans-serif; }
+  form .row .field_with_errors {
+    display: inline; }
+    form .row .field_with_errors input[type=email],
+    form .row .field_with_errors input[type=password],
+    form .row .field_with_errors input[type=text],
+    form .row .field_with_errors select,
+    form .row .field_with_errors textarea {
+      border-color: #d40d12; }
+  @media only screen and (max-width: 767px) {
+    form .row > div.four {
+      margin-bottom: 8px; }
+      form .row > div.four:last-child {
+        margin-bottom: 0; } }
+  form .row > div.eight textarea {
+    height: 60px;
+    width: 438px; }
+    @media only screen and (max-width: 479px) {
+      form .row > div.eight textarea {
+        width: 270px; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      form .row > div.eight textarea {
+        width: 378px; } }
+form .formErrors {
+  width: 450px; }
+  form .formErrors h5 {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 15px; }
+form #error_explanation h2 {
+  font-size: 0.9em; }
+form .formErrors ul,
+form #error_explanation ul {
+  margin-bottom: 8px; }
+  form .formErrors ul li,
+  form #error_explanation ul li {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #777777;
+    color: white;
+    font-size: 0.9em;
+    list-style: none;
+    margin: 6px 0 0 0;
+    padding: 9px; }

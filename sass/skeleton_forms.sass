@@ -1,0 +1,96 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+form
+  .row
+    clear: both
+    margin-bottom: $spacing-inner
+    &.required:after
+      color: $color-red
+      content: "*"
+      display: inline
+    input[type="checkbox"],
+    input[type="file"],
+    label,
+    select
+      cursor: pointer
+    select
+      height: 30px
+      width: 220px
+    input[type="checkbox"],
+    label
+      display: inline
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    textarea,
+    select
+      margin-bottom: 0
+    input[type="email"],
+    input[type="password"],
+    input[type="text"]
+      display: inline
+      width: 90%
+      @media only screen and (min-width: 768px) and (max-width: 959px)
+        width: 88%
+      &.full-width
+        width: 438px
+        @media only screen and (max-width: 479px)
+          width: 270px
+        @media only screen and (min-width: 480px) and (max-width: 767px)
+          width: 378px
+        @media only screen and (min-width: 768px) and (max-width: 959px)
+          width: 343px
+    input[type=submit]
+      width: 450px
+      @media only screen and (max-width: 479px)
+        width: 280px
+      @media only screen and (min-width: 480px) and (max-width: 767px)
+        width: 388px
+      @media only screen and (min-width: 768px) and (max-width: 959px)
+        width: 353px
+    textarea
+      font-family: Arial, Helvetica, sans-serif
+    .field_with_errors
+      display: inline
+      input[type=email],
+      input[type=password],
+      input[type=text],
+      select,
+      textarea
+        border-color: $color-red
+    & > div
+      &.four
+        @media only screen and (max-width: 767px)
+          margin-bottom: $spacing-inner
+          &:last-child
+            margin-bottom: 0
+      &.eight
+        textarea
+          height: 60px
+          width: 438px
+          @media only screen and (max-width: 479px)
+            width: 270px
+          @media only screen and (min-width: 480px) and (max-width: 767px)
+            width: 378px
+  .formErrors
+    width: 450px
+    h5
+      font-size: 0.9em
+      font-weight: bold
+      margin-top: 15px
+  #error_explanation
+    h2
+      font-size: 0.9em
+  .formErrors,
+  #error_explanation
+    ul
+      margin-bottom: $spacing-inner
+      li
+        @include border-radius(3px)
+        background: $color-gray
+        color: #fff
+        font-size: 0.9em
+        list-style: none
+        margin: 6px 0 0 0
+        padding: 9px

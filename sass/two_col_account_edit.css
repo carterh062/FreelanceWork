@@ -1,0 +1,101 @@
+html body #wrapper .feed .feed-items .item .tab {
+  display: none; }
+  html body #wrapper .feed .feed-items .item .tab form {
+    margin-top: 20px; }
+  html body #wrapper .feed .feed-items .item .tab .tabs-wrapper a.tabbutton {
+    border-left: 1px solid #464646;
+    cursor: pointer;
+    margin-left: 8px;
+    padding-left: 11px; }
+    html body #wrapper .feed .feed-items .item .tab .tabs-wrapper a.tabbutton.active {
+      font-weight: bold; }
+    html body #wrapper .feed .feed-items .item .tab .tabs-wrapper a.tabbutton:first-child {
+      border-left: 0;
+      margin-left: 0;
+      padding-left: 0; }
+  html body #wrapper .feed .feed-items .item .tab.active {
+    display: block; }
+  html body #wrapper .feed .feed-items .item .tab#basics_tab form > a.tabbutton,
+  html body #wrapper .feed .feed-items .item .tab#basics_tab form > br,
+  html body #wrapper .feed .feed-items .item .tab#basics_tab form > h3 {
+    display: none; }
+  html body #wrapper .feed .feed-items .item .tab#basics_tab .row .gender #user_is_female {
+    margin-left: 0; }
+  html body #wrapper .feed .feed-items .item .tab#basics_tab .row .gender #user_is_male {
+    margin-left: 16px; }
+  html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday label {
+    float: left;
+    margin-top: 12px 1px 0 0;
+    /* Mobile portrait */ }
+    @media only screen and (max-width: 479px) {
+      html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday label {
+        margin-right: 0; } }
+  html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select {
+    float: left;
+    margin-left: 8px;
+    /* Mobile portrait */
+    width: 121px;
+    /* Mobile portrait */
+    /* Mobile landscape */ }
+    @media only screen and (max-width: 479px) {
+      html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select {
+        margin-left: 4px; } }
+    html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select:first-child {
+      margin-left: 16px;
+      /* Mobile */ }
+      @media only screen and (max-width: 767px) {
+        html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select:first-child {
+          margin-left: 4px; } }
+    @media only screen and (max-width: 479px) {
+      html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select {
+        width: 72px; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      html body #wrapper .feed .feed-items .item .tab#basics_tab .row.birthday select {
+        width: 105px; } }
+  html body #wrapper .feed .feed-items .item .tab#social_tab #facebook_wrapper,
+  html body #wrapper .feed .feed-items .item .tab#social_tab #twitter_wrapper {
+    margin-top: 8px; }
+    html body #wrapper .feed .feed-items .item .tab#social_tab #facebook_wrapper a,
+    html body #wrapper .feed .feed-items .item .tab#social_tab #twitter_wrapper a {
+      color: #555555; }
+      html body #wrapper .feed .feed-items .item .tab#social_tab #facebook_wrapper a:active, html body #wrapper .feed .feed-items .item .tab#social_tab #facebook_wrapper a:hover,
+      html body #wrapper .feed .feed-items .item .tab#social_tab #twitter_wrapper a:active,
+      html body #wrapper .feed .feed-items .item .tab#social_tab #twitter_wrapper a:hover {
+        color: #0070a2; }
+  html body #wrapper .feed .feed-items .item .tab#social_tab form .row:nth-child(2n+1) {
+    border-top: 1px solid #e2e2e2;
+    margin-top: 20px;
+    padding-top: 20px; }
+  html body #wrapper .feed .feed-items .item .tab#social_tab label, html body #wrapper .feed .feed-items .item .tab#email_settings_tab label {
+    display: inline-block;
+    float: left;
+    margin-top: 20px; }
+  html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.offon, html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.onoff, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.offon, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.onoff {
+    background: url(/images/bic_account/offon_long.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 29px;
+    margin-right: 20px;
+    width: 106px; }
+    html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.offon:active, html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.onoff:active, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.offon:active, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.onoff:active {
+      background: url(/images/bic_account/offon_long_a.png) no-repeat; }
+  html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.onoff, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.onoff {
+    background: url(/images/bic_account/onoff_long.png) no-repeat; }
+    html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings a.onoff:active, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings a.onoff:active {
+      background: url(/images/bic_account/onoff_long_a.png) no-repeat; }
+  html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings .pref-wrapper, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings .pref-wrapper {
+    clear: left;
+    float: left;
+    margin-top: 8px; }
+    html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings .pref-wrapper span, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings .pref-wrapper span {
+      display: inline-block;
+      /* Mobile portrait */
+      /* Mobile landscape */ }
+      @media only screen and (max-width: 479px) {
+        html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings .pref-wrapper span, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings .pref-wrapper span {
+          width: 120px; } }
+      @media only screen and (min-width: 480px) and (max-width: 767px) {
+        html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings .pref-wrapper span, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings .pref-wrapper span {
+          width: 240px; } }
+    html body #wrapper .feed .feed-items .item .tab#social_tab .social-settings .pref-wrapper div, html body #wrapper .feed .feed-items .item .tab#email_settings_tab .social-settings .pref-wrapper div {
+      height: 0; }

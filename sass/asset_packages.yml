@@ -1,0 +1,409 @@
+---
+javascripts:
+- admin:
+  - admin
+  - mixpanel
+- adminmergetags:
+  - jquery.tokeninput
+- base:
+  - javascript_extensions
+  - jquery
+  - jquery-ui
+  - jquery_ujs
+  - jquery.tipsy
+  - facebox
+  - facebox_config
+  - application
+- betterific:
+  - betterific
+- bicadminmetrics:
+  - bic_admin_metrics
+  - google_jsapi
+- bicbase:
+  - fb_connect_all
+  - inflection
+  - javascript_extensions
+  - modernizr.css-mediaqueries.img-webp.min
+  - jquery
+  - jquery-ui
+  - jquery.ui-tagging
+  - jquery_ujs
+  - jquery.tokeninput
+  - jquery.base64
+  - jquery.remotipart
+  - jquery_elastic
+  - jquery.get_style_object
+  - jquery.placeholder
+  - jquery.flipclock
+  - jquery_go_to
+  - jquery_outer_html
+  - jquery.qtip.min
+  - jquery.get-cursor-position
+  - jquery.set-cursor-position
+  - jquery.get-input-selection
+  - jquery.set-selection
+  - ajax_with_csrf
+  - EventEmitter-4.0.2.min
+  - facebox
+  - facebox_config
+  - uri
+  - at_tagging
+  - user_invites
+  - bic_base
+  - following
+  - sharing
+  - mixpanel
+  - comment_new_bic
+- bicaccount:
+  - jquery.iframe-transport
+  - bic_account_v4
+- bicdashboard:
+  - bic_dashboard
+- bicideaedit:
+  - bic_idea_edit
+- bictag:
+  - bic_tag
+- bicuser:
+  - bic_user
+- facebooknorefresh:
+  - facebook_basic
+- facebookrefresh:
+  - facebook_basic
+  - facebook_refresh
+- fbreport:
+  - inflection
+  - javascript_extensions
+  - jquery
+  - jquery.metadata
+  - jquery.tablesorter.min
+  - fb_report
+- ie6:
+  - jquery.ifixpng
+  - ie6_init
+- ie7:
+  - json2
+- iframe:
+  - modernizr.css-mediaqueries.img-webp.min
+  - jquery
+  - jquery.blindup
+  - jquery.cycle-3.0.2
+  - jquery-ui-trimmed
+  - ajax_with_csrf
+  - EventEmitter-4.0.2.min
+  - two_col_mixpanel
+  - two_col_shared
+  - raphael
+  - iframe
+- rblineprof:
+  - rblineprof
+- search:
+  - jquery.address
+  - search
+- searchpublic:
+  - raphael
+  - jquery.blindup
+  - two_col_public
+  - jquery.address
+  - search
+- splitlandingpre: &splitlandingpre
+  - fb_connect_all
+  - javascript_extensions
+  - modernizr.css-mediaqueries.img-webp.min
+  - jquery
+  - jquery_ujs
+  - jquery.placeholder
+  - jquery_go_to
+  - facebox
+  - facebox_config
+  - application
+  - click_tracking
+  - split_landing
+  - two_col_tab_switch
+  - mixpanel
+- splitlanding:
+  - *splitlandingpre
+  - jquery-ui
+  - jquery.cycle-3.0.2
+  - jquery.scrollTo-1.4.2
+- subscription:
+  - subscription
+- tagfamily:
+  - tag_family
+- twocol: &twocol
+  - fb_connect_all
+  - inflection
+  - javascript_extensions
+  - modernizr.css-mediaqueries.img-webp.touch.min
+  - jquery
+  - jquery-ui-trimmed
+  - jquery.ui-tagging
+  - jquery.scrollTo-1.4.2
+  - jquery.sort-by
+  - jquery_ujs
+  - jquery.tipsy
+  - jquery.tokeninput
+  - jquery.base64
+  - jquery.remotipart
+  - jquery_elastic
+  - jquery.iframe-transport
+  - jquery.get_style_object
+  - jquery.placeholder
+  - jquery.flipclock
+  - jquery_go_to
+  - jquery_outer_html
+  - jquery.qtip.min
+  - jquery.get-cursor-position
+  - jquery.set-cursor-position
+  - jquery.get-input-selection
+  - jquery.set-selection
+  - jquery.ui.touch-punch.min
+  - facescroll
+  - ajax_with_csrf
+  - EventEmitter-4.0.2.min
+  - facebox
+  - facebox_config
+  - bttrfc
+  - uri
+  - at_tagging
+  - click_tracking
+  - two_col_shared
+  - two_col_mixpanel
+  - two_col
+  - two_col_events
+  - comment_new_two_col
+  - following
+  - sharing
+- twocolaccountedit:
+  - two_col_tab_switch
+  - two_col_account_edit
+- twocolboarding:
+  - *twocol
+  - jquery.animate-shadow
+  - jquery.cycle-3.0.2
+  - two_col_boarding
+- twocolpartnerstaples:
+  - *twocol
+  - staples_profile_show
+- twocolpublic:
+  - raphael
+  - jquery.blindup
+  - two_col_shared
+  - two_col_public
+- twocolideapublic:
+  - raphael
+  - jquery.cycle-3.0.2
+  - jquery.blindup
+  - two_col_public
+- usercontacts:
+  - user_contacts
+
+stylesheets:
+- adminmergetags:
+  - token-input
+  - token-input-facebook
+  - token-input-extra
+  - admin_merge_tags
+- base:
+  - normalize
+  - text
+  - grid_960
+  - tipsy
+  - facebox
+  - flash
+  - formtastic
+  - forms
+  - main
+- admintracking:
+  - admin_tracking
+- bicbase:
+  - normalize
+  - text
+  - facebox
+  - grid_960
+  - jquery-ui
+  - jquery.ui-tagging
+  - jquery.qtip
+  - token-input
+  - token-input-facebook
+  - token-input-extra
+  - bic_base
+  - bic_base_v4
+  - at_tagging_fixes
+  - bic_flipclock
+  - bic_notifications_v4
+  - user_invites
+  - qod
+# This includes most of bicbase, not user_invites.
+- bicdashboard:
+  - normalize
+  - text
+  - facebox
+  - grid_960
+  - jquery-ui
+  - jquery.ui-tagging
+  - bic_base
+  - bic_base_v4
+  - bic_flipclock
+  - bic_dashboard_global
+  - bic_notifications
+- bicaccount:
+  - formtastic
+  - bic_account_v4
+- bicadminmetrics:
+  - bic_admin_metrics
+# This includes bicidea.
+- bicideaedit:
+  - formtastic
+  - bic_search
+  - bic_idea
+  - bic_account_v4
+  - bic_idea_edit_v4
+- bicleaderboard:
+  - bic_leaderboard
+# This includes bicaccount.
+- bicsignup:
+  - formtastic
+  - bic_account_v4
+  - bic_signup_v4
+- bicstaticpublic:
+  - bic_static_v4
+  - bic_leaderboard
+  - bic_static_v4_public
+- bicstaticprivate:
+  - bic_static_v4
+  - bic_leaderboard
+# This includes bicsearch.
+- bictag:
+  - bic_search
+  - bic_tag
+  - be_the_first_wrapper
+  - bic_leaderboard
+# This includes bicidea and bictag.
+- bictagedit:
+  - formtastic
+  - bic_search
+  - bic_idea
+  - bic_tag
+  - bic_account_v4
+  - bic_idea_edit_v4
+# This includes bicsearch.
+- bicuser:
+  - bic_tag # Keep this up-to-date with the tag rollup.
+  - bic_search
+  - bic_user
+  - bic_user_v4
+  - bic_notifications
+- brand:
+  - brand
+  - be_the_first_wrapper
+- fbreport:
+  - fb_report
+- formtasticie6:
+  - formtastic_ie6
+- formtasticie7:
+  - formtastic_ie7
+- iframe:
+  - iframe
+  - two_col_join_wrap
+  - slider_nav_nums
+- maintenance:
+  - "skeleton/base"
+  - "skeleton/skeleton"
+  - "skeleton/layout"
+  - maintenance
+- plugin:
+  - normalize
+  - text
+  - grid_960
+- rblineprof:
+  - rblineprof
+  - pygments
+- paginate:
+  - paginate
+- subscription:
+  - subscription
+- tagfamily:
+  - tag_family
+- trainingfb:
+  - training_fb
+- twocol: &twocol
+  - normalize
+  - text
+  - facebox
+  - grid_960
+  - tipsy
+  - jquery-ui-two-col
+  - jquery-ui
+  - jquery.ui-tagging
+  - jquery.qtip
+  - token-input
+  - token-input-facebook
+  - token-input-extra
+  - two_col_flipclock
+  - qod
+  - two_col_flash
+  - two_col
+  - two_col_join_wrap
+  - two_col_right_col_widgets
+- twocolbrand:
+  - two_col_brand
+- splitlandingskeleton: &splitlandingskeleton
+  - "skeleton/base"
+  - "skeleton/skeleton"
+  - "skeleton/layout"
+  - skeleton_forms
+  - facebox
+  - split_landing
+  - slider_nav_nums
+- splitlandingskeletonpartnerstaples:
+  - *splitlandingskeleton
+  - staples_split_landing
+- twocolaccountedit:
+  - two_col_account_edit
+- twocolskeletonpre: &twocolskeletonpre
+  - "skeleton/base"
+  - "skeleton/skeleton"
+  - "skeleton/layout"
+  - skeleton_forms
+  - facebox
+  - tipsy
+  - jquery-ui-two-col
+  - jquery-ui
+  - jquery.ui-tagging
+  - jquery.qtip
+  - facescroll_general
+  - token-input
+  - token-input-facebook
+  - token-input-extra
+  - two_col_flipclock
+  - qod
+  - two_col_flash
+  - two_col_join_wrap
+  - two_col_right_col_widgets
+- twocolskeleton: &twocolskeleton
+  - *twocolskeletonpre
+  - two_col
+#- twocolboarding:
+#  - *twocolskeleton
+#  - formtastic
+#  - forms
+#  - slider_nav_nums
+#  - boarding
+- twocolboarding:
+   - two_col_boarding
+- markdown:
+  - *twocolskeleton
+  - markdown
+- bicsignupskeleton:
+  - *twocolskeleton
+  - bic_account_v4
+  - bic_signup_v4
+- twocolskeletonpartnerstaples:
+  - *twocolskeletonpre 
+  - two_col_brand
+  - staples_two_col
+- twocolskeletonpartnerwholefoods: 
+  - *twocolskeletonpre 
+  - whole_foods_two_col
+- usercontacts:
+  - user_contacts

@@ -1,0 +1,35 @@
+div#my_account {
+  padding-top: 0; }
+
+#my_account div.user {
+  display: none; }
+
+#page {
+  font-family: "Helvetica Neue", Helvetica, Arial, serif;
+  margin-top: 40px; }
+
+#desc {
+  font-family: Baskvill, Arial, sans-serif; }
+  #desc p {
+    margin-top: 5px; }
+
+.tag-cloud-token {
+  color: #2288bb;
+  float: left;
+  padding: 3px; }
+
+table thead tr th,
+table tbody tr td {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  text-align: left; }
+
+table thead tr th.count,
+table tbody tr td.count {
+  padding-right: 20px;
+  text-align: right;
+  vertical-align: top;
+  width: 100px; }
+
+table tbody tr.sub-idea td {
+  color: #777777; }

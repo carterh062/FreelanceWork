@@ -1,0 +1,853 @@
+@import "globals.sass"
+
+@mixin two-col-base
+  html 
+    height: 100%
+  body
+    font:
+      family: Arial, Helvetica, sans-serif
+      size: 1em
+    height: 100%
+    // force vetical scrollbar
+    overflow-y: scroll
+    position: relative
+  // Important divs
+  #base_create_comment 
+    display: none
+  #feed_loader
+    display: block
+    margin: $spacing-outer auto 0
+  #raphael-overlay
+    background: no-repeat
+    left: 0
+    min-height: 100%
+    min-width: 100%
+    overflow: hidden
+    pointer-events: none
+    position: absolute
+    top: 0
+    z-index: $raphael-z-index
+    @include mobile
+      display: none
+  #raphael-btn 
+    width: $item-width
+  // Useful classes
+  .at-tag
+    @extend .link-no-styling-hover-underline
+    color: $color-blue
+  .inactive
+    display: none
+  .hidden
+    visibility: hidden
+    &:hover
+      visibility: hidden
+  .clear-hidden
+    display: none !important
+    visibility: hidden !important
+    &:hover
+      display: none !important
+      visibility: hidden !important
+  .tipsy-user-score
+    .tipsy-arrow
+      left: 166px
+      position: absolute
+  #nav
+    background: $color-slate
+    display: block
+    height: $nav-height - $spacing-inner
+    left: 0
+    margin: 0 auto
+    padding: $spacing-inner 0 0 0
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: $nav-z-index
+    @include mobile
+      height: $mobile-nav-height
+    .sixteen
+      &.columns
+        display: block
+        float: none
+        margin-left: auto
+        margin-right: auto
+    @include only-desktop
+      .nav-left
+        width: 600px
+      .nav-right
+        width: 320px
+    @include mobile-portrait
+      .nav-left
+        width: 267px
+      .nav-right
+        float: right
+        width: 33px
+    @include mobile-landscape
+      .nav-left
+        width: 335px
+      .nav-right
+        float: right
+        width: 85px
+    @include tablet
+      .nav-left
+        width: 508px
+      .nav-right
+        float: right
+        width: 200px
+    .nav-left-inner
+      .nav-logo 
+        display: block
+        float: left
+        height: 24px
+        margin: 10px 0 0 0
+        width: $nav-logo-width
+        @include mobile-portrait
+          height: 14px
+          width: 70px
+        @include mobile
+          margin-left: 0
+        @include mobile-landscape
+          margin-top: 6px
+      a.nav-logo
+        background: transparent url(/images/two_col/logobeta.png) no-repeat 0 0
+        text-indent: -9999em
+        @include mobile-portrait
+          background: transparent url(/images/two_col/logobeta.mobile-portrait.png) no-repeat 0 0
+      .nav-filters
+        display: inline-block
+        height: $nav-height - $spacing-inner
+        @include mobile
+          height: $mobile-nav-height
+        .filter
+          float: left
+          margin: 0
+          padding: 0 0 0 $spacing-inner
+          @include mobile
+            padding-left: ($spacing-inner / 2)
+          .filter-inner
+            @include clear-list-styles
+            @include mobile-portrait
+              display: inline-block !important
+            ul
+              background-color: $color-slate
+              margin: 0
+              li
+                background-color: $color-slate
+                border-top: 5px solid $color-slate
+                float: left
+                padding: 5px 0 7px
+                position: relative
+                @include mobile
+                  font-size: $font-size-smaller
+                  padding: 0
+                a 
+                  color: #fff
+                  display: block
+                  font:
+                    size: $font-size-small
+                    weight: bold
+                  line-height: 35px
+                  padding: 0 $spacing-inner
+                  @include mobile
+                    padding: 0 ($spacing-inner / 2)
+                  .dropdown-icon
+                    background: transparent url(/images/two_col/down_triangle.png) no-repeat 0 0
+                    display: inline-block
+                    float: right
+                    height: 11px
+                    margin: 14px 0 0 5px
+                    padding: 7px 0 0 7px
+                    width: 3px
+                ul.dropdown
+                  @include ul-dropdown
+                  @include mobile
+                    margin-top: 0
+                &:hover
+                  @include non-mobile
+                    ul.dropdown
+                      display: block
+                &.selected
+                  @include filter-selected
+                @include only-desktop
+                  &:hover
+                    @include filter-selected
+      .tagline
+        color: #fff
+        display: inline-block
+        font-size: $font-size-small-plus
+        margin: 19px 0 0 10px
+    .nav-right-inner
+      padding-top: $spacing-inner
+      @include mobile
+        padding-top: 0
+      & > a
+        display: inline-block
+        float: right
+        height: 25px
+        margin-left: $spacing-inner
+        &.current-user-img-wrap
+          float: right
+          margin-top: 5px
+          img
+            @include imagegridc-image-dimensions
+      .current-user-name
+        @extend .link-no-styling-hover-underline
+        color: #fff
+        margin-top: 12px
+      .login
+        float: right
+        margin-top: 8px
+        a
+          @include border-radius(2px)
+          color: #fff
+          display: inline-block
+          font:
+            size: $font-size-small-plus
+            weight: normal
+          padding: 3px $spacing-inner
+      .nav-drop-wrapper
+        @include mobile-portrait
+          display: none
+        display: inline
+        float: right
+        height: 36px
+        margin: 14px 0 0 $spacing-inner
+        @include mobile-landscape
+          margin-top: 12px
+        padding-bottom: $spacing-inner
+        position: relative
+        text-align: left
+        width: ($spacing-inner * 2)
+        img
+          @include mobile-portrait
+            margin-top: ($spacing-inner * 2)
+          &.dropdown-triangle
+            @include mobile-landscape
+              margin-top: ($spacing-inner / 2)
+        .nav-drop
+          @include ul-dropdown
+          margin-top: 9px
+          right: -$spacing-inner
+          top: 21px
+          @include mobile-portrait
+            margin-left: -($spacing-outer * 2)
+            margin-top: 0
+          @include mobile-landscape
+            margin-top: 7px
+        &:hover
+          .nav-drop
+            display: block
+      .nav-notifs
+        cursor: pointer
+        float: right
+        height: 22px
+        margin: 5px 0 0 $spacing-inner
+        width: 22px
+        .nav-notifs-left
+          background-color: $color-blue
+          color: #fff
+          float: left
+          font-weight: bold
+          height: 25px
+          text-align: center
+          width: 25px
+          &.hover,
+          &:hover
+            background-color: $color-blue-medium
+          span
+            display: inline-block
+            font-size: $font-size-big
+            padding-top: ($spacing-inner / 2)
+            &.more
+              font-size: $font-size-small
+          &.has-unread
+            background-color: $color-orange
+        .nav-notifs-detail
+          @include border-radius(1px)
+          background-color: $color-slate-lightest
+          border: 1px solid $color-slate
+          cursor: auto
+          display: none
+          font-size: $font-size-smaller-plus
+          margin: 0 0 0 -206px
+          position: absolute
+          top: $nav-height
+          width: 300px
+          @include mobile-portrait
+            @include mobile-portrait-popup
+          @include mobile-landscape
+            @include mobile-landscape-popup
+          .alt-scroll-holder
+            .alt-scroll-content
+              width: 269px !important
+            .alt-scroll-vertical-bar
+              margin-right: $spacing-inner
+          .nav-notifs-detail-inner
+            background-color: #fff
+            margin: $spacing-inner
+            max-height: 235px
+            overflow-y: scroll
+            .notifs-wrapper
+              padding: 0 $spacing-inner
+              .notifs
+                border-bottom: 1px solid $color-blue-light
+                cursor: pointer
+                font-size: $font-size-small-plus
+                padding: $spacing-inner 0
+                a
+                  @include link-no-styling-hover-underline
+                .notifs-link
+                  color: $color-gray-lighter
+                .notifs-user
+                  .notifs-link
+                    color: $color-blue-medium
+                    font-weight: bold
+                .notifs-user-img
+                  display: inline-block
+                  float: left
+                .notifs-text
+                  color: $color-gray-lighter
+                  display: inline-block
+                  line-height: 1.5em
+                  margin: ($spacing-inner / 2) 0 0 $spacing-inner
+                  word-wrap: break-word
+                  .notifs-user
+                    color: $color-blue-dark
+                &:hover
+                  background: $color-blue-dark
+                  color: #fff
+                  .notifs-link, .time-ago
+                    color: #fff
+            .notifs-footer
+              padding: 3px
+      .search
+        background: transparent url(/images/two_col/search.png) no-repeat 0 0
+        display: inline-block
+        float: left
+        height: 20px
+        margin-top: $spacing-inner
+        text-indent: -9999em
+        width: 20px
+        @include mobile-portrait
+          display: none
+        @include only-desktop
+          margin-left: $spacing-outer
+      .tagline
+        color: white
+        display: inline-block
+        font:
+          size: $font-size-small-plus
+          weight: normal
+        margin: 16px 0 0 10px
+  #search_slide
+    display: none
+    float: right
+    form
+      @include border-bottom-radius(2px)
+      background-color: $color-slate
+      margin: 0
+      padding-top: $spacing-inner
+      @include mobile-landscape
+        padding-top: 2px
+      input[type=text]
+        @include apply-placeholder-styles
+          color: $color-slate
+        background: #fff url(/images/two_col/search_box_blue_mag_glass.png) no-repeat ($nav-search-box-width - $nav-search-box-blue-mag-glass-width + $spacing-inner) 0
+        border: 0
+        float: left
+        height: 17px
+        width: $nav-search-box-width
+        @include mobile-portrait
+          display: none !important
+        @include mobile-landscape
+          background-position: ($mobile-landscape-nav-search-box-width - $nav-search-box-blue-mag-glass-width + $spacing-inner) 0
+          width: $mobile-landscape-nav-search-box-width
+        @include tablet
+          background-position: ($tablet-nav-search-box-width - $nav-search-box-blue-mag-glass-width + $spacing-inner) 0
+          width: $tablet-nav-search-box-width
+      p
+        float: left
+        height: 20px
+        margin-bottom: 0
+        padding-top: ($spacing-inner / 2)
+        width: 20px
+      div
+        clear: left
+        height: 0
+  #wrapper
+    padding: $nav-height 0 0 0  
+    @include mobile
+      padding-top: $mobile-nav-height
+    .left-col
+      background: #fff
+      min-height: 100%
+      position: relative
+      .left-col-overlay
+        @include background-opacity(#fff, 0.9)
+        display: none
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
+      #show_me_more_wrapper
+        padding: $spacing-outer $spacing-outer 0
+        .show-me-more-inner
+          @include collapsing-margin-fix
+          overflow: hidden
+          width: 100%
+          .left
+            float: left
+            a
+              background: transparent url(/images/two_col/idea/right_orange.png) no-repeat
+              color: $color-blue-medium
+              display: inline-block
+              font-weight: bold
+              height: 32px
+              padding: 6px 0 0 30px
+          .right
+            float: right
+            a
+              @include hide-text
+              background: transparent url(/images/landing/slider_nav_elems.png) no-repeat 0 -60px
+              float: left
+              height: 20px
+              width: 35px
+              &:hover, &.activeSlide
+                background-position: 0 -40px
+      #feeds_wrapper
+        .feed
+          margin-top: 0
+      .create-betterif
+        @include create-betterif
+      #filter_loader
+        margin: 0 0 $spacing-outer $spacing-outer
+      #about_us_wrapper
+        @include opacity(1.0)
+        background-color: #fff
+        display: none
+        margin: $spacing-outer 0 0 0
+        overflow: hidden
+        z-index: 4
+        #hide_about_us_wrapper
+          @extend .link-no-styling-hover-underline
+          display: block
+          font-size: $font-size-smaller-plus
+          margin-top: ($spacing-inner * 2)
+          text-align: center
+        .about-us-inner
+          font-size: $font-size-smaller-plus
+          padding: 0 $spacing-inner
+          #about_us_join_btn
+            cursor: pointer
+          .about-us-text
+            h3
+              margin-bottom: 0
+            p
+              margin: 0
+          .about-us-join-btn
+            @extend .btn-gradient-blue
+            font:
+              size: $font-size-big
+              weight: bold
+            margin: $spacing-inner 0 ($spacing-inner * 2)
+          .about-us-team-wrap
+            .about-us-team-member
+              margin-bottom: $spacing-inner
+              .title
+                strong
+                  color: $color-blue-medium
+                  margin-right: $spacing-inner
+      .general-tag
+        margin: 0
+        padding: ($spacing-outer / 2) 0
+        @include only-desktop
+          padding-right: $spacing-outer
+        width: $item-width
+        @include mobile-portrait
+          width: $mobile-portrait-item-width
+        @include mobile-landscape
+          width: $mobile-landscape-item-width
+        @include tablet
+          width: $tablet-item-width
+        .tag-img
+          float: left
+        .tag-name,
+        .tag-name h1
+          color: $color-gray-darker
+          float: left
+          font:
+            size: 120%
+            weight: normal
+          margin: 35px 0 0 $spacing-inner
+          a
+            @extend .link-no-styling
+            color: $color-blue
+            display: none
+            font-size: $font-size-smallest-plus
+          &.no-img
+            margin-top: 5px
+          &:hover
+            a
+              display: inline-block
+              &:hover
+                text-decoration: underline
+        .tag-name h1
+          font-size: 100%
+          margin: 0
+        .tag-img-wrapper
+          float: left
+        .tag-stats-wrapper
+          float: right
+          padding: 0
+          margin: 30px 0 0 0
+          font-size: $font-size-smaller-plus
+          .follow-wrapper
+            float: right
+          .stat
+            @include linear-gradient(#fff 0%, $color-blue-lighter 4%, #e8f2f8 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+            border: 1px solid $color-blue-light
+            display: inline-block
+            float: left
+            height: 28px
+            margin: 0 0 0 -1px
+            padding: 0 8px
+            position: relative !important
+            span
+              display: block
+              &:first-child
+                font:
+                  size: 75%
+                  weight: bold
+                color: $color-blue
+                height: 14px
+              &:last-child
+                color: $color-blue-medium
+                font-size: 75%
+                height: 13px
+                line-height: 13px
+                overflow: hidden
+                padding: 0
+            &.ideas
+              span:last-child
+                padding-left: 13px
+            &:first-child
+              @include border-left-radius(2px)
+          &.no-img
+            margin-top: 0
+      .feed
+        @include feed
+    .right-col
+      #gmail
+        .widget-inner
+          color: $color-blue-dark
+          padding: ($spacing-inner * 2)
+          form
+            margin-bottom: 0
+            .msg
+              color: $color-gray-darker
+              display: block
+              font-size: $font-size-small
+            input[type=text]
+              @include input-field
+            input[type=submit]
+              @extend .btn-gradient-blue
+              display: inline-block
+              float: left
+              margin-bottom: $spacing-inner / 2
+              margin-left: 0
+              width: 100%
+            #gmail_loader
+              float: left
+              margin-top: $spacing-inner / 2
+      #share_your_betterif
+        .widget-inner
+          @include widget-inner-idea-box
+          .share
+            text-align: center
+            .share-label
+              display: none
+            .share-kinds-wrap
+              .share-btn
+                background: transparent url(/images/two_col/share_icons.36.png) no-repeat 0 0
+                display: inline-block
+                height: 36px
+                margin-left: $spacing-inner
+                text-indent: -9999em
+                width: 36px
+                &.fb
+                  margin-left: 0
+                &.twit
+                  background-position: 0 -36px
+                &.email
+                  background-position: 0 -72px
+          .kicker
+            margin: $spacing-inner 0
+            text-align: center
+      #social_media_invite
+        .header
+          .widget-icon
+            height: 25px
+            width: 63px
+            img
+              &.only-fb
+                display: none
+        .widget-inner
+          .button-wrapper
+            padding: ($spacing-inner * 2) $spacing-inner
+            .fb-button,
+            .tw-button
+              border: none
+              cursor: pointer
+              height: 30px
+              outline: none
+              width: 50px
+            .fb-button
+              background: url(/images/share_icons/facebookBIG.png)
+              margin: 0 0 0 ((298 - (2 * $spacing-inner) - (2 * 50) - 20) / 2)
+              &:hover,
+              &.active
+                background: url(/images/share_icons/facebookBIG_h.png)
+            .tw-button
+              background: url(/images/share_icons/twitterBIG.png)
+              margin-left: $spacing-outer
+              &:hover,
+              &.active
+                background: url(/images/share_icons/twitterBIG_h.png)
+            .loader
+              margin-left: $spacing-inner
+          .fb-msg,
+          .tw-msg
+            display: none
+            margin: 0 $spacing-outer
+            form
+              textarea
+                @include input-field
+                width: 246px
+              a
+                @extend .btn-gradient-blue
+                float: right
+                padding: 0 ($spacing-inner / 2)
+              div
+                clear: right
+        &.only-fb
+          .header
+            .widget-icon
+              width: 25px
+              img
+                display: none
+                &.only-fb
+                  display: inline-block
+          .widget-inner
+            .button-wrapper
+              .fb-button
+                margin-left: ((298 - (2 * $spacing-inner) - (1 * 50)) / 2)
+      #sign_up
+        color: $color-blue-dark
+        margin: 20px 0 0 0
+        p
+          margin: 10px 0
+          padding: 0
+          @include mobile
+            text-align: center
+          &.heading
+            font-size: $font-size-small-plus
+          &.secondary
+            font-size: $font-size-smaller-plus
+        form
+          display: none
+          button
+            @extend .btn-gradient-blue
+            // FIXME Re-factor these constants.
+            @include linear-gradient(#65b3d7 0%, #3097c8 4%, #2371b3 100%, $fallback: #2371b3)
+            margin-top: $spacing-inner
+            width: 100%
+          label
+            display: none
+          input[type=text]
+            &.full-width
+              width: 271px
+        a.tabbutton,
+        h3
+          display: none
+      .footer-links-wrap
+        color: $color-blue-dark
+        margin-top: 60px
+        @include mobile
+          display: block
+          margin-bottom: $spacing-outer
+          margin-top: 20px
+          text-align: center
+        .about-us, .privacy-policy
+          @extend .link-no-styling-hover-underline
+          color: $color-blue-dark
+          display: inline-block
+          font-size: $font-size-smaller-plus
+      .widget-box
+        background-color: #fff
+        border: 1px solid $color-slate-lightest
+        margin: ($spacing-outer / 2) 0 0 0
+        min-height: 25px
+        &:first-child 
+          margin: $spacing-outer 0 0 0
+        .header
+          background-color: $color-slate-lightest
+          border-bottom: 1px solid $color-slate-lightest
+          .widget-name
+            @include opacity(0.9)
+            color: $color-slate
+            display: inline-block
+            font:
+              size: $font-size-small-plus
+              weight: bold
+            padding: $spacing-inner
+            .loader
+              height: 14px
+              width: 14px
+          .widget-icon
+            background: transparent url(/images/two_col/widget_icons.png) no-repeat 0 0
+            display: inline-block
+            height: 25px
+            margin: 12px 0 0 12px
+            width: 25px
+            &.custom-icon
+              background: none
+            &.who-to-follow
+              background-position: center 0px
+            &.trending, &.suggested-topics
+              background-position: center -25px
+        .widget-inner
+          // TODO Are QODs gone from the right col for good?
+          //&.qod
+          //  padding: $spacing-inner
+          //  p
+          //    clear: left
+          //  .qod-choices
+          //    p
+          //      text-align: center
+          //    table
+          //      font-size: $font-size-smaller-plus
+          //      margin: 0 0 $spacing-inner 0
+          //      width: 100%
+          //      tr
+          //        th
+          //          color: $color-blue-medium
+          //        th:first-child, td:first-child
+          //          padding-right: 10px
+          //          text-align: right
+          //        th:last-child, td:last-child
+          //          padding-left: 10px
+          //          text-align: left
+          //    .qod-choice
+          //      @extend .btn-gradient-blue
+          //      cursor: pointer
+          //      float: left
+          //      font:
+          //        size: 75%
+          //        weight: normal
+          //      margin-top: $spacing-inner
+          //      width: 135px
+          //      &:nth-child(2n)
+          //        margin-left: $spacing-inner
+          //  .qod-question
+          //    color: $color-blue-dark
+          //  .qod-add-wibbi
+          //    @extend .btn-gradient-blue
+          //    @include linear-gradient(#65b3d7 0%, #3097c8 4%, #2371b3 100%, $image: '/images/two_col/b_plus.png', $image-offset: 8px 5px, $fallback: #2371b3)
+          //    background-repeat: no-repeat
+          //    font-weight: normal
+          //    height: 28px
+          //    line-height: 28px
+          //    margin: $spacing-inner 0 0 0
+          //    padding: 0 $spacing-inner
+          //    text-align: left
+          //    text-indent: 25px
+          //    img
+          //      margin: 5px 5px 0 0
+          //      float: left
+          //    &:hover
+          //      @include linear-gradient(#65b3d7 0%, #2371b3 4%, #3097c8 100%, $image: '/images/two_col/b_plus.png', $image-offset: 8px 5px, $fallback: #3097c8)
+          //      background-repeat: no-repeat
+          //  .qod-results-choice
+          //    color: $color-blue-dark
+          //  .qod-results-percentage
+          //    color: $color-blue-dark
+          //    font-weight: bold
+        &#gmail
+          .widget-inner
+            color: $color-blue-dark
+            padding: 2*$spacing-inner
+            form
+              margin-bottom: 0
+              .msg
+                color: $color-gray-darker
+                display: block
+                font-size: $font-size-small
+              input[type=submit]
+                @extend .btn-gradient-blue
+                display: inline-block
+                float: left
+                margin-bottom: 0 0 $spacing-inner / 2 0
+                width: 100%
+              #gmail_loader
+                float: left
+                margin-top: $spacing-inner / 2
+    .bottom-of-idea-join-wrap
+      padding: 0 $spacing-outer
+      margin: 0 0 $spacing-outer
+      visibility: hidden
+      h1 
+        margin: 0 0 $spacing-inner
+        padding: 0
+        text-align: center
+        color: $color-blue-dark
+        font:
+          size: 120%
+          weight: bold
+      #bottom-of-idea-join-btn
+        height: 35px
+        line-height: 35px
+        font:
+          size: 80%
+          weight: normal
+  
+  .idea-upvote-inactive-anim
+    background: transparent url(/images/two_col/upvote_anim.png) 0 0 no-repeat
+    background-size: 100%
+    display: none
+    height: 20px
+    left: $spacing-inner
+    position: relative
+    top: $spacing-inner
+    width: 16px
+  
+  // Remove the horizontal scrollbar on the search autocomplete dropdown.
+  .ui-menu .ui-menu-item
+    overflow: hidden
+  
+  // Search
+  body.search
+    #wrapper
+      .left-col
+        #filter_loader
+          margin-top: $spacing-outer
+        #no_search_results
+          color: $color-blue
+          margin-left: $spacing-outer
+        #search_filter_loader
+          margin-left: $spacing-outer
+          margin-top: 5px
+        .feed
+          .filter
+            margin-top: $spacing-outer
+  
+  @include mobile-portrait
+    #nav-search-dropdown
+      @include mobile-portrait-popup
+  
+  // Logged-out right-col sign-up
+  .right-col
+    .signup-button-box
+      display: none
+    #signup_form_box
+      p
+        display: none

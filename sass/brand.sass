@@ -1,0 +1,146 @@
+@import "css_constants.sass"
+@import "css_mixins.sass"
+
+$border_top_right_radius: 2px
+#rich_brand_image
+  position: relative
+  top: 46px
+  .logo
+    @include box-shadow(0, 5px, 10px, rgba(0,0,0,0.5))
+    left: 20px
+    position: absolute
+    top: 100px
+  .stat-boxes-wrapper
+    background-color: #fff
+    bottom: 0
+    left: 0
+    padding: 7px 15px 7px 20px
+    position: absolute
+    -khtml-border-radius-topright: $border_top_right_radius
+    -moz-border-radius-topright: $border_top_right_radius
+    -webkit-border-top-right-radius: $border_top_right_radius
+    border-top-right-radius: $border_top_right_radius
+  .stat-boxes
+    .stat-box
+      border-right: 1px solid $color-gray-lighter
+      color: $color-gray
+      float: left
+      font-size: 12px
+      padding: 2px 8px
+      text-transform: uppercase
+      .blue-bold-numerals
+        font-size: 16px
+    .stat-box:first-child
+      padding-left: 0
+    .stat-box:last-child
+      border-right: 0
+    .stat-title
+      color: $color-gray-light
+      font-size: 10px
+      font-weight: bold
+
+#page
+  position: relative
+
+$user_info_padding_left: 10px
+#bic_center
+  margin-left: 0
+  .user
+    clear: both
+    height: 40px
+    padding-top: 15px
+    a.imglink
+      color: $color-blue
+      float: left
+      height: 40px
+      width: 40px
+    .info
+      color: $color-gray
+      float: left
+      padding-left: 10px
+      width: 500px - $user_info_padding_left
+      span
+        border-left: 1px solid $color-gray-lighter
+        font-size: 13px
+        padding: 0 6px
+      span:first-child
+        border-left: 0
+        padding-left: 0
+
+#bic_right
+  .brand-box
+    color: $color-black-light
+    margin-bottom: 24px
+    h3
+      border-bottom: 1px solid $color-gray-lighter
+      color: $color-gray-light
+      font-size: 16px
+      font-weight: normal
+      margin-bottom: 16px
+      padding-bottom: 8px
+      .brand-name
+        color: $color-blue
+        font-weight: bold
+    ol
+      margin: 0
+      padding: 0
+      li
+        margin-bottom: 3px
+        a
+          color: $color-black-light
+      li:last-child
+        margin-bottom: 0
+    .qod-question
+      margin-bottom: 5px
+    .qod-choices
+      div
+        @include border-radius(2px)
+        border: 1px solid $color-blue
+        cursor: pointer
+        display: inline-block
+        float: left
+        margin-top: 4px
+        padding: 4px 6px
+        width: 80px
+        color: $color-blue
+        font-size: 14px
+      div:nth-child(2n)
+        margin-left: 6px
+      div:last-child
+        border: 0
+        clear: both
+        display: block
+        height: 0
+        padding: 0
+        margin: 0
+      div.wide
+        width: 180px
+      div.wide:nth-child(2n)
+        margin-left: 0
+      div:active,
+      div:hover
+        background-color: $color-blue
+        color: #fff
+      p
+        text-align: center
+        margin: 0
+        padding: 0
+  .brand-box:last-child
+    margin-bottom: 0
+  .brand-box.rich-qod
+    table
+      width: 100%
+      font-size: 14px
+      tr
+        th:first-child,
+        td:first-child
+          padding-right: $spacing-inner
+          text-align: right
+        th:last-child,
+        td:last-child
+          padding-left: $spacing-inner
+          text-align: left
+  .see-more-link
+    color: $color-blue-dark
+    font-size: 12px
+    margin-left: 5px

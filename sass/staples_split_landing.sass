@@ -1,0 +1,92 @@
+@import "css_mixins"
+@import "staples"
+
+body
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif
+
+#header
+  .header-wrap
+    .logo
+      width: auto
+      height: auto
+    &.pencils
+      background: url(/images/two_col/staples/pencils_header.jpg)
+    &.you-make-more-happen
+      background: url(/images/two_col/staples/you_make_more_happen_header.jpg)
+
+.tab > .tabbutton
+  float: right
+  cursor: pointer
+  &:hover
+    text-decoration: underline
+
+.staples-red
+  color: $staples-color-red
+
+@include staples-forms
+
+#join
+  #headline
+    text-align: center
+    margin-top: 10px
+    h2
+      font-weight: 500
+      font-size: 30px
+    h3
+      font-weight: 300
+      line-height: 1.3em
+    h3 + h3
+      margin: 20px 0 30px
+      padding: 0 20%
+  margin-top: 40px
+  form
+    margin-bottom: 0
+    input
+      box-sizing: border-box
+      margin: 4px 0
+      width: 100%
+    input[type=file],
+    input[type=submit]
+      cursor: pointer
+    select
+      margin: 4px 0 0
+  h3
+    font-size: 20px
+    font-weight: 500
+    margin-bottom: 10px
+  label
+    margin-top: 10px
+  p.small
+    margin-bottom: 0
+    font-size: 12px
+
+.tabbed
+  margin: 0 auto
+  padding-bottom: 40px
+  .tab
+    display: none
+  .tab.active
+    display: block
+
+#forgot_password_tab
+  p
+    margin: 0 0 4px 0
+  .response
+    a
+      cursor: pointer
+      &:active,
+      &:hover
+        text-decoration: underline
+
+.reset-password
+  .inner
+    margin-top: 20px
+    h1
+      font-size: 40px
+      margin-bottom: 20px
+    #reset_password_form
+      @include staples-forms
+      fieldset
+        margin-bottom: 0
+      ol
+        margin: 0

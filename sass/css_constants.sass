@@ -1,0 +1,12 @@
+@import "css_constants_base.sass"
+@import "partner_constants.sass"
+@import "staples.sass"
+$is-staples: ($partner == $staples)
+@import "whole_foods.sass"
+$is-whole-foods: ($partner == $whole-foods)
+
+@if $is-staples
+  @include staples-constants
+
+@if $is-whole-foods
+  @include whole-foods-constants

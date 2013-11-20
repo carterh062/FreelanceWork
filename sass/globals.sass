@@ -1,0 +1,347 @@
+@import "css_constants.sass"
+
+// css_mixins.sass relies on some of the constants defined in files included
+// above, so we have to import it down here.
+@import "css_mixins.sass"
+
+@media (min-width: 480px)
+  .only-mobile-portrait
+    display: none !important
+@media only screen and (max-width: 479px)
+  .no-mobile-portrait
+    display: none !important
+@media (min-width: 768px)
+  .only-mobile
+    display: none !important
+@media only screen and (max-width: 767px)
+  .no-mobile
+    display: none !important
+@media only screen and (max-width: 959px)
+  .only-desktop
+    display: none !important
+@media only screen and (min-width: 960px)
+  .no-desktop
+    display: none !important
+
+.bold
+  font-weight: bold
+
+.red
+  color: $color-red
+
+.blue-bold-numerals
+  color: $color-blue
+  font-weight: bold
+
+.mini-user-img
+  width: 25px
+  height: 25px
+
+.link-no-styling
+  color: inherit
+  font: inherit
+  text-decoration: inherit
+.hover-underline
+  &:hover
+    text-decoration: underline
+.link-no-styling-hover-underline
+  @extend .link-no-styling
+  @extend .hover-underline
+
+.idea-vote-box
+  .idea-vote-btn
+    @include border-top-radius(3px)
+    border: 1px solid $color-blue
+    color: $color-blue
+    display: inline-block
+    float: left
+    font-size: 15px
+    height: 30px
+    margin: 0 auto
+    padding: 0
+    overflow: hidden
+    text-decoration: none
+    span
+      &.arrow,
+      &.inner
+        cursor: pointer
+        display: inline-block
+        float: left
+        height: 30px
+      &.arrow
+        background: $color-blue url(/images/two_col/up_arrow.png) no-repeat $spacing-inner $spacing-inner
+        width: 30px
+      &.inner
+        padding: 7px $spacing-inner 0
+        text-align: center
+    &.idea-upvote-active,
+    &:hover
+      background-color: $color-blue-medium
+      color: #fff
+    &.idea-downvote-active,
+    &.idea-downvote-inactive
+      background: transparent url(/images/two_col/down_arrow.png) no-repeat $spacing-inner $spacing-inner
+      border: 0
+      text-indent: -9999em
+      width: 30px
+      &:hover
+        background-image: url(/images/two_col/down_arrow_solid.png)
+    &.idea-downvote-active
+      background-image: url(/images/two_col/down_arrow_solid.png)
+      margin-left: 2px
+  .idea-upvote-count
+    @include border-bottom-radius(3px)
+    background-color: $color-blue-medium
+    clear: both
+    color: #fff
+    font:
+      size: $font-size-small-plus
+      weight: bold
+    height: 30px
+    padding: 1px
+    text-align: center
+    width: 30px
+    span
+      display: inline-block
+      padding-top: $spacing-inner
+  .loader
+    display: inline-block
+    float: left
+    height: 19px
+    margin: ($spacing-inner / 2) ($spacing-inner / 2) 0 ($spacing-inner / 2)
+    width: 20px
+
+.dropdown-triangle 
+  margin: 0 0 0 3px
+      
+.btn-color-blue-lighter
+  @include border-radius(2px)
+  background: $color-blue-lighter
+  border: 1px solid $color-blue-light
+  line-height: 25px
+  display: block
+  color: $color-blue-medium
+  font:
+    size: 0.85em
+    weight: 600
+  text:
+    align: center
+    decoration: none
+  &:hover
+    background: $color-blue-light
+    color: #fff
+
+.btn-gradient-blue
+  @include border-radius(2px)
+  @include linear-gradient(#65b3d7 0%, #3097c8 4%, #2371b3 100%, $fallback: #2371b3)
+  border: 1px solid #283b6b
+  color: #fff
+  display: block
+  font:
+    size: 0.85em
+    weight: 600
+  height: 25px
+  line-height: 23px
+  padding: 0
+  text:
+    align: center
+    decoration: none
+    shadow: none
+  &:hover
+    @include linear-gradient(#65b3d7 0%, #2371b3 4%, #3097c8 100%, $fallback: #3097c8)
+    color: #fff
+  &:active
+    @include box-shadow(0, 0, 30px, black, 0.50, false, true)
+
+.btn-gradient-gray
+  @include border-radius(2px)
+  @include linear-gradient(#828b90 0%, #58636a 4%, #40484d 100%, $fallback: #40484d)
+  border: 1px solid #2f3437
+  line-height: 23px
+  height: 25px
+  display: block
+  color: #fff
+  font:
+    size: 0.85em
+    weight: 600
+  text:
+    align: center
+    decoration: none
+  &:hover
+    @include linear-gradient(#828b90 0%, #40484d 4%, #58636a 100%, $fallback: #58636a)
+    color: #fff
+  &:active
+    @include box-shadow(0, 0, 30px, black, 0.50, false, true)
+
+.btn-blue-outline
+  border: 1px solid $color-blue
+  color: $color-blue
+  text-align: center
+  &:hover
+    background-color: $color-blue
+    color: #fff
+
+.follow-wrapper
+  height: 29px
+  width: 29px
+  .follow-btn,
+  .unfollow-btn
+    background: transparent url(/images/two_col/plus.png) no-repeat 0 0
+    cursor: pointer
+    display: inline-block
+    height: 29px
+    text-indent: -9999em
+    width: 29px
+  .unfollow-btn
+    background: transparent url(/images/two_col/plus_gray.png) no-repeat 0 0
+  &:hover
+    display: inline-block
+
+input[type=submit]
+  cursor: pointer
+
+// These set some styles that were set for bic.
+.ui-tagging
+  border: 0
+  .ui-tagging-highlight
+    background-color: #fff
+    @include mobile
+      margin-left: 2px
+    div
+      color: transparent !important
+      -webkit-text-fill-color: transparent !important
+    .delete-me
+      background-color: #abbbd5
+    .ui-corner-all
+      @include border-radius(2px)
+  .ui-tagging-highlight,
+  .ui-tagging-wrap
+    padding: 0 !important
+
+ul.token-input-list-facebook
+  border: 1px solid $color-gray-outline
+  padding: 0 $spacing-inner 0 0
+  li.token-input-token-facebook
+    @include linear-gradient(#fff 0%, $color-blue-lighter 4%, #e8f2f8 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+    @include border-radius(0)
+    border: 1px solid $color-blue-light
+    height: 23px
+    margin: ($spacing-inner / 2) 0 0 ($spacing-inner / 2) !important
+    &:first-child
+      margin-bottom: ($spacing-inner / 2)
+    padding: 0
+    position: relative
+    a.name,
+    .name-faux-link
+      @include linear-gradient(#fff 0%, $color-blue-lighter 65%, $color-blue-lighter 95%, $color-blue-medium, $fallback: $color-blue-lighter)
+      font-size: 0.7em
+      line-height: 23px
+      padding: 0 $spacing-inner
+      text-decoration: none
+    .name,
+    p
+      background: transparent
+      border: 0
+      color: $color-blue-medium
+      display: block
+      float: left
+      font:
+        size: 0.9em
+        weight: normal
+      line-height: 23px
+      margin-bottom: 0
+      padding: 0 $spacing-inner - 2px
+      position: relative
+    span.token-input-delete-token-facebook
+      color: $color-blue-medium
+      cursor: pointer
+      display: block
+      float: left
+      height: 6px
+      margin-right: $spacing-inner
+      margin-top: 2px
+      width: 6px
+      &:hover
+        color: $color-blue-dark
+    &:hover,
+    &.token-input-selected-token-facebook
+      @include box-shadow(0, 0, 15px, $color-blue, 0.2, false, true)
+      border-color: $color-blue-medium
+      color: $color-blue !important
+      span.token-input-delete-token-facebook
+        display: block
+    &:active
+      @include box-shadow(0, 0, 15px, $color-blue, 0.75, false, true)
+  li.token-input-input-token-facebook
+    line-height: 35px
+    input[type=text]
+      border: 0
+      box-shadow: none !important
+
+/* This can't be scoped to #facebox because it's appended before </body>.
+.token-input-dropdown-facebook
+  border: 1px solid $color-gray-lighter
+  margin-left: -1px
+  &.facebox-share
+    @include mobile-landscape
+      width: 339px !important
+
+$email-share-email-list-margin-left: 28px
+#facebox
+  @include clear-list-styles
+  .fb-content
+    background: #fff !important
+    padding: 0
+    @include non-mobile
+      ul.token-input-list-facebook,
+      ul.token-input-dropdown-facebook
+        width: 458px !important
+    @include mobile
+      ul.token-input-list-facebook,
+      ul.token-input-dropdown-facebook
+        width: 338px !important
+    .container
+      width: 480px
+      @include mobile-landscape
+        width: 360px
+        & > .eight.columns
+          padding: 0 10px
+          width: 360px
+        .row
+          .one.column
+            width: 30px
+          .seven.columns
+            width: 310px
+          .eight.columns
+            width: 340px
+    #email_share_box
+      #email_share_box_top
+        border-bottom: 1px solid $color-gray-outline
+        margin-bottom: ($spacing-inner * 2)
+        padding: $spacing-inner $spacing-inner $spacing-inner ($spacing-inner * 2)
+        a
+          background: transparent url(/images/submit_popup/close.png) no-repeat 0 0
+          border: none
+          cursor: pointer
+          float: right
+          height: 18px
+          text-indent: -9999em
+          width: 18px
+        .popup-header-lg
+          color: $color-slate
+      #email_share_email_input_wrapper
+        margin-left: $email-share-email-list-margin-left
+      form
+        margin-bottom: 0
+        textarea
+          width: 98%
+        input[type=submit]
+          margin-bottom: 0
+          width: 460px
+        @include mobile-landscape
+          input[type=submit]
+            width: 340px
+        .loader
+          margin-left: 214px
+          @include mobile-landscape
+            margin-left: 155px

@@ -1,0 +1,4 @@
+#wrapper .left-col .feed .feed-items form a.tabbutton, #wrapper .left-col .feed .feed-items form h3 {
+  display: none; }
+#wrapper .right-col .widget-box {
+  display: none; }

@@ -1,0 +1,46 @@
+$staples-background-color-gray: #f6f6f6
+$staples-background-color-gray-dark: #dfdfdf
+$staples-color-black: #555
+$staples-color-red: #c00
+$staples-color-red-medium: #900
+$staples-color-red-dark: #600
+
+@mixin staples-constants
+  $color-blue: $staples-color-red
+  $color-blue-medium: $staples-color-red-medium
+  $color-blue-light: $staples-background-color-gray
+  $color-blue-lighter: $staples-background-color-gray
+  $color-blue-dark: $staples-color-red-dark
+
+@mixin staples-forms
+  .red
+    color: $staples-color-red
+  .row
+    .four.columns
+      input[type=email],
+      input[type=password],
+      input[type=text],
+      select,
+      textarea
+        width: 90% !important
+  /* Taken from skeleton */
+  input[type=submit],
+  input[type=submit]:hover
+    @include border-radius(3px)
+    background: $staples-color-red
+    border: none
+    color: #fff
+    font-size: 1em
+    font-weight: normal
+    margin-bottom: 0
+    margin-top: 10px
+    padding: 10px 15px
+    text-shadow: 0 1px darken($staples-color-red, 10%)
+  
+  .field_with_errors
+    input[type=email],
+    input[type=password],
+    input[type=text],
+    select,
+    textarea
+      border-color: $staples-color-red

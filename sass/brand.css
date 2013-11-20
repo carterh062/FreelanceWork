@@ -1,0 +1,140 @@
+#rich_brand_image {
+  position: relative;
+  top: 46px; }
+  #rich_brand_image .logo {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    left: 20px;
+    position: absolute;
+    top: 100px; }
+  #rich_brand_image .stat-boxes-wrapper {
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    padding: 7px 15px 7px 20px;
+    position: absolute;
+    -khtml-border-radius-topright: 2px;
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px; }
+  #rich_brand_image .stat-boxes .stat-box {
+    border-right: 1px solid #cccccc;
+    color: #777777;
+    float: left;
+    font-size: 12px;
+    padding: 2px 8px;
+    text-transform: uppercase; }
+    #rich_brand_image .stat-boxes .stat-box .blue-bold-numerals {
+      font-size: 16px; }
+  #rich_brand_image .stat-boxes .stat-box:first-child {
+    padding-left: 0; }
+  #rich_brand_image .stat-boxes .stat-box:last-child {
+    border-right: 0; }
+  #rich_brand_image .stat-boxes .stat-title {
+    color: #acb9bf;
+    font-size: 10px;
+    font-weight: bold; }
+
+#page {
+  position: relative; }
+
+#bic_center {
+  margin-left: 0; }
+  #bic_center .user {
+    clear: both;
+    height: 40px;
+    padding-top: 15px; }
+    #bic_center .user a.imglink {
+      color: #19b4e5;
+      float: left;
+      height: 40px;
+      width: 40px; }
+    #bic_center .user .info {
+      color: #777777;
+      float: left;
+      padding-left: 10px;
+      width: 490px; }
+      #bic_center .user .info span {
+        border-left: 1px solid #cccccc;
+        font-size: 13px;
+        padding: 0 6px; }
+      #bic_center .user .info span:first-child {
+        border-left: 0;
+        padding-left: 0; }
+
+#bic_right .brand-box {
+  color: #333333;
+  margin-bottom: 24px; }
+  #bic_right .brand-box h3 {
+    border-bottom: 1px solid #cccccc;
+    color: #acb9bf;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 16px;
+    padding-bottom: 8px; }
+    #bic_right .brand-box h3 .brand-name {
+      color: #19b4e5;
+      font-weight: bold; }
+  #bic_right .brand-box ol {
+    margin: 0;
+    padding: 0; }
+    #bic_right .brand-box ol li {
+      margin-bottom: 3px; }
+      #bic_right .brand-box ol li a {
+        color: #333333; }
+    #bic_right .brand-box ol li:last-child {
+      margin-bottom: 0; }
+  #bic_right .brand-box .qod-question {
+    margin-bottom: 5px; }
+  #bic_right .brand-box .qod-choices div {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border: 1px solid #19b4e5;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+    padding: 4px 6px;
+    width: 80px;
+    color: #19b4e5;
+    font-size: 14px; }
+  #bic_right .brand-box .qod-choices div:nth-child(2n) {
+    margin-left: 6px; }
+  #bic_right .brand-box .qod-choices div:last-child {
+    border: 0;
+    clear: both;
+    display: block;
+    height: 0;
+    padding: 0;
+    margin: 0; }
+  #bic_right .brand-box .qod-choices div.wide {
+    width: 180px; }
+  #bic_right .brand-box .qod-choices div.wide:nth-child(2n) {
+    margin-left: 0; }
+  #bic_right .brand-box .qod-choices div:active,
+  #bic_right .brand-box .qod-choices div:hover {
+    background-color: #19b4e5;
+    color: white; }
+  #bic_right .brand-box .qod-choices p {
+    text-align: center;
+    margin: 0;
+    padding: 0; }
+#bic_right .brand-box:last-child {
+  margin-bottom: 0; }
+#bic_right .brand-box.rich-qod table {
+  width: 100%;
+  font-size: 14px; }
+  #bic_right .brand-box.rich-qod table tr th:first-child,
+  #bic_right .brand-box.rich-qod table tr td:first-child {
+    padding-right: 8px;
+    text-align: right; }
+  #bic_right .brand-box.rich-qod table tr th:last-child,
+  #bic_right .brand-box.rich-qod table tr td:last-child {
+    padding-left: 8px;
+    text-align: left; }
+#bic_right .see-more-link {
+  color: #1490b7;
+  font-size: 12px;
+  margin-left: 5px; }
