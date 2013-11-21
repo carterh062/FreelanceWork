@@ -500,7 +500,26 @@ div#join-trail, div#join-trail-right {
     width: 100%;
     z-index: 0;
     /* RICH BRANDS */ }
-    #header .header-slide.header-cheetos {
+#header .header-slide.header-cheetos { background: url(http://staging-assets0.betterifbox.com/images/landing/header_cheetos-ed3701962b2297f6b748f3c89aae6ed640932a24.jpg) top center no-repeat }
+#header .header-slide.header-airplanes { background: url(http://staging-assets0.betterifbox.com/images/landing/header_airplanes-357e07cf22bc7e2a2e5ac454060afec59b997d4d.jpg) top center no-repeat }
+#header .header-slide.header-ups { background: url(http://staging-assets0.betterifbox.com/images/landing/header_ups-357e07cf22bc7e2a2e5ac454060afec59b997d4d.jpg) top center no-repeat }
+#header .header-slide.header-weather { background: url(http://staging-assets0.betterifbox.com/images/landing/header_weather-357e07cf22bc7e2a2e5ac454060afec59b997d4d.jpg) top center no-repeat }
+#header .header-slide.header-toilets { background: url(http://staging-assets0.betterifbox.com/images/landing/header_toilets-6f17c30e5f21f1e6c234b437a578eb8f911575c9.jpg) top center no-repeat }
+#header .header-slide.header-arbys-red { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/arbys_red-1a4b8bbf8b07fc4d9f4f18f3106628d29dbf6c9e.jpg) top center no-repeat }
+#header .header-slide.header-arbys-black { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/arbys_black-1a4b8bbf8b07fc4d9f4f18f3106628d29dbf6c9e.jpg) top center no-repeat }
+#header .header-slide.header-arbys-store { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/arbys_store-1a4b8bbf8b07fc4d9f4f18f3106628d29dbf6c9e.jpg) top center no-repeat }
+#header .header-slide.header-saxbys-coffee-espresso { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/saxbys-coffee_espresso-49e5ff258fefd58fa90a2309af18a1422f457af7.jpg) top center no-repeat }
+#header .header-slide.header-saxbys-coffee-froyo { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/saxbys-coffee_froyo-49e5ff258fefd58fa90a2309af18a1422f457af7.jpg) top center no-repeat }
+#header .header-slide.header-saxbys-coffee-freeze { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/saxbys-coffee_freeze-49e5ff258fefd58fa90a2309af18a1422f457af7.jpg) top center no-repeat }
+#header .header-slide.header-usa-today-phone { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/usa-today_phone_shift3-d1ab64f7fdb21070c2329af873c9a3a621f965c0.png) top center no-repeat }
+#header .header-slide.header-usa-today-paper { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/usa-today_paper_shift4-6bc0b54804c9997326fd9884c125ec1028a461c3.jpg) top center no-repeat }
+#header .header-slide.header-usa-today-news { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/usa-today_news_shift3-d1ab64f7fdb21070c2329af873c9a3a621f965c0.png) top center no-repeat }
+#header .header-slide.header-washington-nationals-blue { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/washington-nationals_blue-0abb0ff2be56503df5f4fd74a15dc829d444e845.jpg) top center no-repeat }
+#header .header-slide.header-washington-nationals-black { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/washington-nationals_black-0abb0ff2be56503df5f4fd74a15dc829d444e845.jpg) top center no-repeat }
+#header .header-slide.header-washington-nationals-fade { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/washington-nationals_fade-0abb0ff2be56503df5f4fd74a15dc829d444e845.jpg) top center no-repeat }
+#header .header-slide.header-washington-nationals-skyline { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/washington-nationals_skyline-81393c56393ef52ef4b58a496856bd8bcb0e6e28.jpg) top center no-repeat }
+#header .header-slide.header-washington-nationals-stadium { background: url(http://staging-assets0.betterifbox.com/images/rich_brands/washington-nationals_stadium-81393c56393ef52ef4b58a496856bd8bcb0e6e28.jpg) top center no-repeat }
+    /*#header .header-slide.header-cheetos {
       background: url(/images/landing/header_cheetos.jpg) top center no-repeat; }
     #header .header-slide.header-airplanes {
       background: url(/images/landing/header_airplanes.jpg) top center no-repeat; }
@@ -537,7 +556,7 @@ div#join-trail, div#join-trail-right {
     #header .header-slide.header-washington-nationals-skyline {
       background: url(/images/rich_brands/washington-nationals_skyline.jpg) top center no-repeat; }
     #header .header-slide.header-washington-nationals-stadium {
-      background: url(/images/rich_brands/washington-nationals_stadium.jpg) top center no-repeat; }
+      background: url(/images/rich_brands/washington-nationals_stadium.jpg) top center no-repeat; }*/
 
 @media only screen and (orientation: portrait) {
   .no-portrait {
@@ -714,7 +733,7 @@ div form {
 
 #login_facebook,
 #login_twitter {
-  background: transparent url(/images/partners/login_facebook.png) no-repeat 0 0;
+  background: transparent url(http://staging-assets0.betterifbox.com/images/partners/login_facebook-c5ca5d2d67dfea3ff2acd899e238843ea93e9a5a.png) no-repeat 0 0;
   border: none;
   display: inline-block;
   height: 35px;
@@ -732,7 +751,7 @@ div form {
       margin-left: 85px; } }
 
 #login_twitter {
-  background: transparent url(/images/partners/login_twitter.png) no-repeat 0 0; }
+  background: transparent url(http://staging-assets0.betterifbox.com/images/partners/login_twitter-c5ca5d2d67dfea3ff2acd899e238843ea93e9a5a.png) no-repeat 0 0; }
 
 img {
   margin: 5px 0 10px; }
@@ -762,7 +781,7 @@ img {
   width: 100%; }
 
 #footer-window-close {
-  background: transparent url(/images/landing/footer_window_close.png) 0 0 no-repeat;
+  background: transparent url(http://staging-assets0.betterifbox.com/images/landing/footer_window_close-6989b28b8b3aee1efc129749947e6eab1defb690.png) 0 0 no-repeat;
   bottom: -36px;
   clear: both;
   cursor: pointer;
